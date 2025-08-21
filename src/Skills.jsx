@@ -9,6 +9,7 @@ import jquery1 from "./Images/jquery1.png";
 import php1 from "./Images/php1.png";
 import typescript from "./Images/typescript.png";
 import react1 from "./Images/react1.png";
+import node from "./Images/node.png";
 
 
 
@@ -85,6 +86,14 @@ export const Skills = () => {
                   <div className="progress-bar bg-primary progress-bar-striped" style={{width:"100%"}}></div>
                 </div>
                 <br />
+
+                 <span className="text-black h3 j_php1">
+                                  <img src={node} alt="react image" width="25px" />
+                                  Node.js</span>
+                                <div className="progress">
+                                  <div className="progress-bar bg-primary progress-bar-striped" style={{width:"100%"}}></div>
+                                </div>
+                                <br />
 
                
               </div>
