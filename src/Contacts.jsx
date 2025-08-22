@@ -47,7 +47,7 @@ export const Contacts = () => {
 
             <div>
                
-                <App />
+               
               </div>
 
     
