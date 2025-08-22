@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 const App = () => {
@@ -7,16 +7,17 @@ const App = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      // Make sure the URL points to your XAMPP server
-      const response = await axios.post('http://localhost/my-php-backend/submit.php', {
-        name,
-        message,
-      });
-      alert('Message Sent Successfully', response.data);
-    } catch (error) {
-      console.error('Error submitting form:', error);
-    }
+     alert('Message Sent Successfully', response.data);
+    // try {
+    //   // Make sure the URL points to your XAMPP server
+    //   // const response = await axios.post('http://localhost/my-php-backend/submit.php', {
+    //   //   name,
+    //   //   message,
+    //   // });
+    //   alert('Message Sent Successfully', response.data);
+    // } catch (error) {
+    //   console.error('Error submitting form:', error);
+    // }
   };
 
  
