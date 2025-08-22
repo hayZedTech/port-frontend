@@ -18,7 +18,7 @@ export const Contacts = () => {
   return (
     <>
     <section id="contacts2" className="Contacts text-center">
-      <h3 className="text-info text-center my-4 "><b>MY CONTACT</b></h3><br />
+      <h3 className="text-info text-center my-4 "><b>MY CONTACT0000000</b></h3><br />
       <div className="row text-black" id="">
         <h4 className="col-sm my-3">
           <a href="tel:+2348072178062" className="text-black text-decoration-none">
