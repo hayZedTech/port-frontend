@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import { Footer } from "./Layout";
-import App from "./MessageForm";
+// import App from "./MessageForm";
 
 
 import phone1 from "./Images/phone1.png";

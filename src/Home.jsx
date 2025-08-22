@@ -19,7 +19,7 @@ import node from "./Images/node.png";
 import cbt_image from "./Images/cbt_image.png";
 import chat_img from "./Images/chat_img.jpg";
 import ecommerce from "./Images/ecommerce.png";
-import MessageForm from "./MessageForm";
+// import MessageForm from "./MessageForm";
 import { Footer } from "./Layout";
 
 
