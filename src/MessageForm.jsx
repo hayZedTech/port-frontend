@@ -7,17 +7,19 @@ const App = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-     alert('Message Sent Successfully');
-    // try {
-    //   // Make sure the URL points to your XAMPP server
-    //   // const response = await axios.post('http://localhost/my-php-backend/submit.php', {
-    //   //   name,
-    //   //   message,
-    //   // });
-    //   alert('Message Sent Successfully', response.data);
-    // } catch (error) {
-    //   console.error('Error submitting form:', error);
-    // }
+    //  alert('Message Sent Successfully');
+    try {
+     
+      const response = await axios.post('http://localhost:4000/app', {
+        name,
+        message,
+      });
+      alert('Message Sent Successfully: ' + response.data.message);
+      setName("");
+      setMessage("");
+    } catch (error) {
+      alert('Error submitting form:', error);
+    }
   };
 
  
