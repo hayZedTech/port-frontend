@@ -10,7 +10,7 @@ const App = () => {
     //  alert('Message Sent Successfully');
     try {
      
-      const response = await axios.post('http://localhost:4000/app', {
+      const response = await axios.post('https://port-backend-dday.onrender.com/app', {
         name,
         message,
       });
