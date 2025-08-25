@@ -186,13 +186,20 @@ export const Home = () => {
                 </div>
                 <br />
 
-                 <span className="text-black h3 j_php1">
-                  <img src={node} alt="react image" width="25px" />
-                  Node.js</span>
-                <div className="progress">
-                  <div className="progress-bar bg-primary progress-bar-striped" style={{width:"100%"}}></div>
-                </div>
-                <br />
+                  {/* <span className="text-black h3 j_php1">
+                                                   <img src={node} alt="react image" width="25px" />
+                                                   Node.js</span>
+                                   <div className="progress">
+                                     <div className="progress-bar bg-primary progress-bar-striped" style={{width:"100%"}}></div>
+                                   </div>
+                                   <br /> */}
+                 
+                                   <span className="text-black h3 j_php1">
+                                                   <img src={node} alt="react image" width="25px" />
+                                                   Backend & Database Management: Node.js · Express · MySQL · PostgreSQL</span>
+                                   <div className="progress">
+                                     <div className="progress-bar bg-primary progress-bar-striped" style={{width:"100%"}}></div>
+                                   </div>
 
                
               </div>
