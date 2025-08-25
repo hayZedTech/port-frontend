@@ -52,7 +52,7 @@ const App = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="message" className="form-label">
-            <b>Message</b>
+            <b>Messages</b>
           </label>
           <textarea
             className="form-control"
