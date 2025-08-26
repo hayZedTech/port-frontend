@@ -261,7 +261,7 @@ export const Home = () => {
                          </div>
                        </div>
                        <div className="carousel-item">
-                        <a href="https://chat-frontend-flame-six.vercel.app/"><img src={chat_img} alt="chat_img" className="d-block" style={{width:"100%", height:"300px"}} /></a>
+                        <a href="https://chat-frontend-wslj.vercel.app/"><img src={chat_img} alt="chat_img" className="d-block" style={{width:"100%", height:"300px"}} /></a>
                          <div className="carousel-caption d-none d-md-block">
                             <h2 className="text-black">Chat App</h2>
                             <p className="text-black">Chat with your friends</p>
