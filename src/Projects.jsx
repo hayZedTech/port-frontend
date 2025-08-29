@@ -31,6 +31,7 @@ export const Projects = () => {
                     
                   </div>
                 </div>
+
                 <div class="carousel-item">
                  <a href="https://chat-frontend-wslj.vercel.app/"><img src={chat_img} alt="chat_img" className="d-block" style={{width:"100%", height:"300px"}} /></a>
                   <div class="carousel-caption d-none d-md-block">
@@ -38,8 +39,9 @@ export const Projects = () => {
                      <p className="text-black">Chat with your friends</p>
                   </div>
                 </div>
+
                 <div class="carousel-item">
-                 <Link to="/ecommerce"><img src={ecommerce} alt="e-commerce" className="d-block" style={{width:"100%", height:"300px"}} /></Link>
+                  <a href="https://jimmarof.com"><img src={ecommerce} alt="chat_img" className="d-block" style={{width:"100%", height:"300px"}} /></a>
                   <div class="carousel-caption d-none d-md-block">
                     <h2 className="text-black">Ecommerce Website</h2>
                      <p className="text-black">Shop with us</p>

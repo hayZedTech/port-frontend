@@ -1,146 +1,227 @@
 import { Outlet } from "react-router-dom";
 import { Footer } from "./Layout";
 
-import html1 from "./Images/html1.png";
-import css1 from "./Images/css1.png";
-import js1 from "./Images/js1.png";
-import bootstrap1 from "./Images/bootstrap1.png";
-import jquery1 from "./Images/jquery1.png";
-import php1 from "./Images/php1.png";
-import typescript from "./Images/typescript.png";
-import react1 from "./Images/react1.png";
-import node from "./Images/node.png";
-
-
-
 export const Skills = () => {
   return (
     <>
-     <section id="skills2" className="skills" data-aos="fade-up">
-    <h3 className="text-info text-center my-4 "><b>MY SKILLS</b></h3>
-    <div className="sect4">
-      
-        <div className="sect4a">
-            <div className="container mt-3">
-                <span className="text-black h3">
-                  <img src={html1} alt="html image" width="25px" />
-                  HTML</span>
+      <section id="skills2" className="skills py-0 bg-light" data-aos="fade-up">
+        <div className="container">
+          <h3 className="text-center text-info mb-5 fw-bold">
+            MY SKILLS
+          </h3>
 
-                <div className="progress">
-                  <div className="progress-bar bg-primary progress-bar-striped text-white" style={{width:"100%"}}></div>
-                </div>
-                <br />
+          <div className="row g-4">
+            {/* Core Development */}
+            <div className="col-lg-6">
+              <div className="card shadow-sm border-0 h-100">
+                <div className="card-body p-4">
+                  <h4 className="text-primary fw-bold mb-4">
+                    Core Development
+                  </h4>
 
-                <span className="text-black h3 css1">
-                  <img src={css1} alt="css image" width="55px" id="css2" />
-                  CSS</span>
-                <div className="progress">
-                  <div className="progress-bar bg-primary progress-bar-striped" style={{width:"100%"}}></div>
-                </div>
-                <br />
-
-                <span className="text-black h3">
-                  <img src={js1} alt="" width="35px" />
-                  Javascript</span>
-                <div className="progress">
-                  <div className="progress-bar bg-primary progress-bar-striped" style={{width:"100%"}}></div>
-                </div>
-                <br />
-
-                <span className="text-black h3">
-                  <img src={bootstrap1} alt="bootstrap1 Image" width="35px" />
-                  Bootstrap</span>
-                <div className="progress">
-                  <div className="progress-bar bg-primary progress-bar-striped" style={{width:"100%"}}></div>
-                </div>
-                <br />
-
-                <span className="text-black h3 j_php1">
-                  <img src={jquery1} alt="jquery1 image" width="25px" />
-                  JQuery</span>
-                <div className="progress">
-                  <div className="progress-bar bg-primary progress-bar-striped" style={{width:"100%"}}></div>
-                </div>
-                <br />
-
-                <span className="text-black h3">
-                  <img src={php1} alt="php1 image" width="25px" />
-                  PHP and Ajax</span>
-                <div className="progress">
-                  <div className="progress-bar bg-primary progress-bar-striped" style={{width:"100%"}}></div>
-                </div>
-                <br />
-
-                <span className="text-black h3 j_php1">
-                  <img src={typescript} alt="typescript image" width="25px" />
-                  Typescript</span>
-                <div className="progress">
-                  <div className="progress-bar bg-primary progress-bar-striped" style={{width:"100%"}}></div>
-                </div>
-                <br />
-
-                <span className="text-black h3 j_php1">
-                  <img src={react1} alt="react image" width="25px" />
-                  React</span>
-                <div className="progress">
-                  <div className="progress-bar bg-primary progress-bar-striped" style={{width:"100%"}}></div>
-                </div>
-                <br />
-
-                 {/* <span className="text-black h3 j_php1">
-                                  <img src={node} alt="react image" width="25px" />
-                                  Node.js</span>
-                  <div className="progress">
-                    <div className="progress-bar bg-primary progress-bar-striped" style={{width:"100%"}}></div>
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/html1.png" alt="HTML" width="28" className="me-2" />
+                      HTML
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
+                    </div>
                   </div>
-                  <br /> */}
 
-                  <span className="text-black h3 j_php1">
-                                  <img src={node} alt="react image" width="25px" />
-                                  Backend & Database Management: Node.js · Express · MySQL · PostgreSQL</span>
-                  <div className="progress">
-                    <div className="progress-bar bg-primary progress-bar-striped" style={{width:"100%"}}></div>
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/css1.png" alt="CSS" width="28" className="me-2" />
+                      CSS
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated  bg-info" style={{ width: "100%" }}></div>
+                    </div>
                   </div>
-                 
 
-               
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/js1.png" alt="JavaScript" width="28" className="me-2" />
+                      JavaScript & TypeScript
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/jquery1.png" alt="JQuery" width="28" className="me-2" />
+                      JQuery
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/react1.png" alt="React" width="28" className="me-2" />
+                      React & Vite
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/bootstrap1.png" alt="Bootstrap" width="28" className="me-2" />
+                      Bootstrap
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+
+                  {/* PHP & Ajax */}
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/php1.png" alt="PHP" width="28" className="me-2" />
+                      PHP & Ajax
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar  progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/node.png" alt="Node.js" width="28" className="me-2" />
+                      Node.js & Express.js
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/sql.png" alt="MySQL" width="28" className="me-2" />
+                      MySQL · PostgreSQL
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/git.png" alt="Git" width="28" className="me-2" />
+                      Git & GitHub
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            {/* UI/UX Design */}
+            <div className="col-lg-6">
+              <div className="card shadow-sm border-0 h-100">
+                <div className="card-body p-4">
+                  <h4 className="text-primary fw-bold mb-4">
+                    UI/UX Design
+                  </h4>
+
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      {/* <img src="/icons/design/ux.svg" alt="UX" width="28" className="me-2" /> */}
+                      Wireframing · User Flows · Prototyping
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-success" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      {/* <img src="/icons/design/ui.svg" alt="UI" width="28" className="me-2" /> */}
+                      Design Systems · Accessibility (WCAG)
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-success" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      {/* <img src="/icons/design/figma.svg" alt="Figma" width="28" className="me-2" /> */}
+                      Figma (Prototyping, Interactive Components)
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-success" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <span className="d-flex align-items-center fw-semibold">
+                      {/* <img src="/icons/design/photoshop.svg" alt="Photoshop" width="28" className="me-2" /> */}
+                      Photoshop (UI Asset Optimization, Web Mockups)
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-success" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Soft Skills Section */}
+          <div className="row g-4 mt-5">
+            <div className="col-md-3">
+              <div className="card shadow-sm border-0 text-center p-3 h-100">
+                <img src="/icons/softskills/communication.svg" alt="Communication" width="32" className="mb-2" />
+                <h6 className="fw-bold">Communication</h6>
+                <div className="progress mt-2">
+                  <div className="progress-bar progress-bar-striped progress-bar-animated bg-secondary" style={{ width: "90%" }}></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-3">
+              <div className="card shadow-sm border-0 text-center p-3 h-100">
+                <img src="/icons/softskills/creativity.svg" alt="Creativity" width="32" className="mb-2" />
+                <h6 className="fw-bold">Creativity</h6>
+                <div className="progress mt-2">
+                  <div className="progress-bar progress-bar-striped progress-bar-animated bg-secondary" style={{ width: "95%" }}></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-3">
+              <div className="card shadow-sm border-0 text-center p-3 h-100">
+                <img src="/icons/softskills/teamwork.svg" alt="Teamwork" width="32" className="mb-2" />
+                <h6 className="fw-bold">Teamwork</h6>
+                <div className="progress mt-2">
+                  <div className="progress-bar progress-bar-striped progress-bar-animated bg-secondary" style={{ width: "90%" }}></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-3">
+              <div className="card shadow-sm border-0 text-center p-3 h-100">
+                <img src="/icons/softskills/problem_solving.svg" alt="Problem Solving" width="32" className="mb-2" />
+                <h6 className="fw-bold">Problem Solving</h6>
+                <div className="progress mt-2">
+                  <div className="progress-bar progress-bar-striped progress-bar-animated bg-secondary" style={{ width: "90%" }}></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-      <div className="sect4b" data-aos="fade-up">
-                  
-      <div className="container sect4bcon ">
-        <p>Communication</p>
-        <div className="skills2 ht1">90%</div>
-      </div>
-
-
-      <div className="container sect4bcon">
-        <p>Creativity</p>
-        <div className="skills2 cs1">95%</div>
-      </div>
-
-
-      <div className="container sect4bcon">
-        <p>Teamwork</p>
-        <div className="skills2 js1">90%</div>
-      </div>
-
-
-      <div className="container sect4bcon">
-        <p>Problem Solving</p>
-        <div className="skills2 ph1">90%</div>
-      </div><br /><br />
-              </div>
-          </div>
-          {/* <!-- sect4 ends here --> */}
-           <span id="project1"></span>
-
+        <Footer />
+        <Outlet />
       </section>
-      {/* skills ends here */}
-    
-       <Footer />
-    <Outlet />
     </>
-  )
-}
+  );
+};
