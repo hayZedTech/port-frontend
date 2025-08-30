@@ -116,7 +116,7 @@ export const Home = () => {
 
 
       <section className="skills px-2 px-lg-5 " data-aos="fade-up">
-    <h3 className="text-info text-center my-4 "><b>MY SKILLS 1</b></h3>
+    <h3 className="text-info text-center my-4 "><b>MY SKILLS</b></h3>
     <div className="row g-4">
             {/* Core Development */}
             <div className="col-lg-6">
