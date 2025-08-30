@@ -10,6 +10,7 @@ import cbt_image from "./Images/cbt_image.png";
 import chat_img from "./Images/chat.jpg";
 import ecommerce from "./Images/ecommerce.png";
 import exam002 from "./Images/exam002.png";
+import blog from "./Images/blog.png";
 
 export const Projects = () => {
   const [showModal, setShowModal] = useState(false);
@@ -50,6 +51,15 @@ export const Projects = () => {
       link: "https://jimmarof.com",
       languages: ["HTML", "CSS", "PHP", "JavaScript", "Bootstrap", "JQuery", "MYSQL"],
     },
+
+    {
+      id: 5,
+      title: "Blog Website",
+      desc: "Visit Jimmarof Blog",
+      img: blog,
+      link: "https://jimmarof.com/jimmarof_blog/index.php",
+      languages: ["HTML", "CSS", "PHP", "JavaScript", "Bootstrap", "JQuery", "MYSQL"],
+    },
   ];
 
   const openModal = (project) => {
@@ -62,7 +72,7 @@ export const Projects = () => {
   return (
     <>
       <section className="bg-light py-5">
-        <h3 className="text-info text-center mb-5 fw-bold">MY PROJECTS</h3>
+        <h3 className="text-info text-center mb-4 fw-bold">MY PROJECTS</h3>
 
         <div className="container">
           <div className="row">
@@ -102,7 +112,7 @@ export const Projects = () => {
                     src={currentProject.img}
                     alt={currentProject.title}
                     className="card-img-top"
-                    style={{ height: "200px", width:"100%", objectFit: "fill" }}
+                    style={{ height: "180px", width:"100%", objectFit: "fill" }}
                     whileHover={{ scale: 1.05 }}
                   />
                   <div className="card-body text-center bg-primary rounded-bottom">
