@@ -9,6 +9,7 @@ import "./css/mystyle.css";
 import cbt_image from "./Images/cbt_image.png";
 import chat_img from "./Images/chat.jpg";
 import ecommerce from "./Images/ecommerce.png";
+import exam002 from "./Images/exam002.png";
 
 export const Projects = () => {
   const [showModal, setShowModal] = useState(false);
@@ -18,14 +19,23 @@ export const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Exam Page",
+      title: "Exam App 1",
       desc: "Write your exams with ease.",
       img: cbt_image,
-      link: "/biology01",
+      link: "https://hayzed-exam.onrender.com",
+      languages: ["HTML", "CSS", "JavaScript", "JQuery", "PHP", "Bootstrap", "PostgreSQL"],
+    },
+
+    {
+      id: 2,
+      title: "Exam App 2",
+      desc: "Practice here.",
+      img: exam002,
+      link: "/Biology01",
       languages: ["HTML", "CSS", "React", "JavaScript", "Bootstrap"],
     },
     {
-      id: 2,
+      id: 3,
       title: "Chat App",
       desc: "Chat with your friends in real-time.",
       img: chat_img,
@@ -33,7 +43,7 @@ export const Projects = () => {
       languages: ["HTML", "CSS","React", "Node.js", "Express.js", "PostgreSQL", "Bootstrap"],
     },
     {
-      id: 3,
+      id: 4,
       title: "Ecommerce Website",
       desc: "Shop with us anytime, anywhere.",
       img: ecommerce,
@@ -143,7 +153,7 @@ export const Projects = () => {
         )}
       </Modal>
 
-      <Footer />
+      {/* <Footer /> */}
       <Outlet />
     </>
   );

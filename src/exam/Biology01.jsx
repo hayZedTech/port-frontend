@@ -7,6 +7,7 @@ export const Biology01 = () => {
   const [answers, setAnswers] = useState({});
   const [feedback, setFeedback] = useState({});
   const [submitted, setSubmitted] = useState({});
+  const [totalScore, setTotalScore] = useState(null); // ✅ Track total score
 
   const correctAnswers = {
     one: "A",
@@ -46,6 +47,27 @@ export const Biology01 = () => {
         [displayId]: `❌ Wrong! Correct answer: ${correctAnswers[questionName]}`,
       });
     }
+  };
+
+  // ✅ New function for total score
+  const handleCheckResult = () => {
+    let total = 0;
+    let allAnswered = true;
+
+    Object.keys(correctAnswers).forEach((key) => {
+      if (!answers[key]) {
+        allAnswered = false;
+      } else if (answers[key] === correctAnswers[key]) {
+        total += 1;
+      }
+    });
+
+    if (!allAnswered) {
+      alert("⚠️ Please complete all the questions!");
+      return;
+    }
+
+    setTotalScore(total);
   };
 
   const questions = [
@@ -120,6 +142,23 @@ export const Biology01 = () => {
       <h1 className="text-primary shadow">
         <marquee>HayZed Tech</marquee>
       </h1>
+
+      {/* ✅ Check Result Button */}
+        <div className="position-absolute mt-4  pb-2  pb-lg-4 pe-3" style={{right:"0"}} >
+          <button
+            onClick={handleCheckResult}
+            className="btn btn-success px-4 py-2"
+          >
+            Check Result
+          </button>
+          {totalScore !== null && (
+            <div className="mt-3 fw-bold text-primary">
+              ✅ Your Total score is: {totalScore}/10
+            </div>
+          )}
+        </div>
+
+
       <div className="container-fluid d-flex flex-column bg-light py-4 px-3 px-lg-4 page_body">
         <h1 className="mb-4 text-primary">Page {page}</h1>
         <div className="content-container w-100 px-2 py-4 bg-white border rounded shadow-lg">
@@ -149,18 +188,36 @@ export const Biology01 = () => {
                 </li>
               </ol>
               <div className="text-center">
-                <button onClick={() => handleSubmit(questions[page - 1].id, `disp${page}`)} disabled={submitted[questions[page - 1].id]} className="px-4 py-2 rounded rounded-3">
+                <button
+                  onClick={() =>
+                    handleSubmit(questions[page - 1].id, `disp${page}`)
+                  }
+                  disabled={submitted[questions[page - 1].id]}
+                  className="px-4 py-2 rounded rounded-3"
+                >
                   <b>Submit</b>
                 </button>
-                <span id={`disp${page}`} className="ms-3 fw-bold">{feedback[`disp${page}`]}</span>
+                <span
+                  id={`disp${page}`}
+                  className="ms-3 fw-bold"
+                >
+                  {feedback[`disp${page}`]}
+                </span>
               </div>
             </div>
           )}
         </div>
+
+       
+
+        
+      </div>
+      
+       
+
         <div className="mt-4">
           <Pagination onPageChange={handlePageChange} total={10} />
         </div>
-      </div>
     </>
   );
 };
