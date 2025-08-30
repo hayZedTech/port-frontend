@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/mystyle.css";
 
 import cbt_image from "./Images/cbt_image.png";
-import chat_img from "./Images/chat_img.jpg";
+import chat_img from "./Images/chat.jpg";
 import ecommerce from "./Images/ecommerce.png";
 
 export const Projects = () => {
