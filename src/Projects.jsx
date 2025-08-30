@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Footer } from "./Layout";
 import { motion } from "framer-motion";
-import { Modal } from "react-bootstrap"; // using Bootstrap modal
+import { Modal } from "react-bootstrap"; 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/mystyle.css";
 
@@ -13,6 +13,7 @@ import ecommerce from "./Images/ecommerce.png";
 export const Projects = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [activeProject, setActiveProject] = useState(1); // default project ID
 
   const projects = [
     {
@@ -46,50 +47,63 @@ export const Projects = () => {
     setShowModal(true);
   };
 
+  const currentProject = projects.find((p) => p.id === activeProject);
+
   return (
     <>
-      <section className=" bg-light py-5">
-        <h3 className="text-info text-center mb-5 fw-bold">
-          MY PROJECTS
-        </h3>
+      <section className="bg-light py-5">
+        <h3 className="text-info text-center mb-5 fw-bold">MY PROJECTS</h3>
 
         <div className="container">
-          {/* Added gy-5 for vertical spacing between rows */}
-          <div className="row gy-5 gx-4 proj_cards">
-            {projects.map((project) => (
-              <motion.div
-                key={project.id}
-                className="col-12 col-sm-6 col-md-4 mb-5"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                whileHover={{ scale: 1.05, zIndex:50 }}
-              >
+          <div className="row">
+            {/* Sidebar for project names */}
+            <div className="col-md-4 mb-4">
+              <div className="card shadow-lg border-0 h-100 p-3">
+                <h5 className="fw-bold text-center text-primary mb-3">Projects</h5>
+                <ul className="list-group">
+                  {projects.map((project) => (
+                    <li
+                      key={project.id}
+                      className={`list-group-item list-group-item-action ${
+                        activeProject === project.id ? "active" : ""
+                      }`}
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setActiveProject(project.id)}
+                    >
+                      {project.title}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Main project display */}
+            <div className="col-md-8">
+              {currentProject && (
                 <motion.div
-                  className="card shadow-lg border-0 h-100"
+                  className="card shadow-lg border-0"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
                   style={{ cursor: "pointer" }}
-                  onClick={() => openModal(project)}
+                  onClick={() => openModal(currentProject)} // 🔹 open modal on click
                 >
                   <motion.img
-                    src={project.img}
-                    alt={project.title}
+                    src={currentProject.img}
+                    alt={currentProject.title}
                     className="card-img-top"
-                    whileInView={{boxShadow:"0 0 20px 3px grey"}}
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.4 }}
-                    style={{ height: "200px", objectFit: "cover" }}
+                    style={{ height: "200px", width:"100%", objectFit: "fill" }}
+                    whileHover={{ scale: 1.05 }}
                   />
-                  <motion.div className="card-body text-center bg-primary rounded"
-                     whileInView={{boxShadow:"0 0 20px 3px grey"}}
-                  >
+                  <div className="card-body text-center bg-primary rounded-bottom">
                     <h5 className="card-title fw-bold text-white">
-                      {project.title}
+                      {currentProject.title}
                     </h5>
-                    <p className="card-text text-white">{project.desc}</p>
-                  </motion.div>
+                    <p className="card-text text-white">{currentProject.desc}</p>
+                  </div>
                 </motion.div>
-              </motion.div>
-            ))}
+              )}
+            </div>
           </div>
         </div>
       </section>
