@@ -289,7 +289,7 @@ export const Home = () => {
                 <img src="/icons/softskills/communication.svg" alt="Communication" width="32" className="mb-2" />
                 <h6 className="fw-bold">Communication</h6>
                 <div className="progress mt-2">
-                  <div className="progress-bar progress-bar-striped progress-bar-animated bg-secondary" style={{ width: "90%" }}></div>
+                  <div className="progress-bar progress-bar-striped progress-bar-animated bg-secondary" style={{ width: "95%" }}></div>
                 </div>
               </div>
             </div>
