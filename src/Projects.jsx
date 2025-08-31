@@ -72,7 +72,7 @@ export const Projects = () => {
   return (
     <>
       <section className="bg-light py-5">
-        <h3 className="text-info text-center mb-4 fw-bold">MY PROJECTS 1</h3>
+        <h3 className="text-info text-center mb-4 fw-bold">MY PROJECTS</h3>
 
         <div className="container">
           <div className="row">
