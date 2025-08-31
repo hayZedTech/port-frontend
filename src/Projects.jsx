@@ -18,31 +18,34 @@ export const Projects = () => {
   const [activeProject, setActiveProject] = useState(1); // default project ID
 
   const projects = [
-    {
+   
+     {
       id: 1,
-      title: "Exam App 1",
-      desc: "Write your exams with ease.",
-      img: cbt_image,
-      link: "https://hayzed-exam.onrender.com",
-      languages: ["HTML", "CSS", "JavaScript", "JQuery", "PHP", "Bootstrap", "PostgreSQL"],
-    },
-
-    {
-      id: 2,
-      title: "Exam App 2",
-      desc: "Practice here.",
-      img: exam002,
-      link: "/Biology01",
-      languages: ["HTML", "CSS", "React", "JavaScript", "Bootstrap"],
-    },
-    {
-      id: 3,
       title: "Chat App",
       desc: "Chat with your friends in real-time.",
       img: chat_img,
       link: "https://chat-frontend-wslj.vercel.app/",
       languages: ["HTML", "CSS","React", "Node.js", "Express.js", "PostgreSQL", "Bootstrap"],
     },
+
+    {
+      id: 2,
+      title: "Exam App 1",
+      desc: "Practice here.",
+      img: exam002,
+      link: "/Biology01",
+      languages: ["HTML", "CSS", "React", "JavaScript", "Bootstrap"],
+    },
+
+     {
+      id: 3,
+      title: "Exam App 2",
+      desc: "Write your exams with ease.",
+      img: cbt_image,
+      link: "https://hayzed-exam.onrender.com",
+      languages: ["HTML", "CSS", "JavaScript", "JQuery", "PHP", "Bootstrap", "PostgreSQL"],
+    },
+
     {
       id: 4,
       title: "Ecommerce Website",
