@@ -20,6 +20,7 @@ export const Contacts = () => {
     <section id="contacts2" className="Contacts text-center">
       <h3 className="text-info text-center my-4 "><b>MY CONTACT</b></h3><br />
       <div className="row text-black" id="">
+         <p className="text-black h4">Feel free to reach out for collaborations, freelance projects, or full-time opportunities.</p>
         <h4 className="col-sm my-3">
           <a href="tel:+2348072178062" className="text-black text-decoration-none">
             <img src={phone1} alt="" width="25px" /> 08072178062</a>

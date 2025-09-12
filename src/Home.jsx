@@ -68,8 +68,7 @@ export const Home = () => {
                 <h3 className="text-info text-center"><b>ABOUT ME</b></h3>
             <h2 className="text-center my-3"> Full Stack Developer</h2>
                 <h5 className="">
-               I possess a diverse skill set that allows me to handle both front-end and back-end development tasks. My ability to work on the entire technology stack, from designing user interfaces to managing databases and server-side logic, makes me a versatile and valuable asset in any development team.
-               being a full stack developer empowers me to create robust, scalable, and user-friendly applications while offering flexibility and efficiency in the development process.
+              I am a versatile Full Stack Developer skilled in both front-end and back-end development. From crafting responsive user interfaces to managing databases and server-side logic, I build scalable and user-friendly applications. My adaptability across the entire stack allows me to deliver efficient and robust solutions in any development environment.
                 </h5>
         </div>
     
@@ -85,7 +84,7 @@ export const Home = () => {
             
             <div className="col-sm sect3a p-4">
                 <h3><b>Front-end Developer</b></h3>
-                <p>A Junior Web Developer that is familiar with the layers of web development process, including HTML, CSS, Javascript etc. I am also responsible for the visual elements of a website, including layout, design and user interaction.  </p>
+                <p>I design and develop interactive, responsive, and visually engaging websites using modern technologies like HTML, CSS, and JavaScript.  </p>
             </div>
           
 
@@ -93,7 +92,7 @@ export const Home = () => {
            
            <div className="col-sm sect3c p-4">
               <h3><b>Back-end Developer</b></h3>
-              <p>A Junior Web Developer that is responsible for building and maintaining the infrastructure and code that powers a website. I work closely with other developers to ensure that the user interface and backend systems work together seamlessly. </p>
+              <p>I develop and maintain the server-side infrastructure that powers websites and applications, ensuring seamless performance and integration with the front end.</p>
           </div>
          
 
@@ -102,7 +101,7 @@ export const Home = () => {
             <div className="col-sm sect3b p-4">
                 <h3><b>UI/UX Designer</b></h3>
                 <p>
-                  Junior UI/UX Designer that is responsible for the look, feel and functionality of digital products and services. I use my knowledge of design principles and user psychology to create intuitive and user-friendly interfaces that enhance the user experience.
+                  I create intuitive and user-friendly digital experiences by combining design principles with user psychology. My focus is on usability, accessibility, and delivering clean, engaging interfaces.
                 </p>
             </div>
           
@@ -346,6 +345,7 @@ export const Home = () => {
       <section className="Contacts text-center">
       <h3 className="text-info text-center my-4 "><b>MY CONTACT</b></h3><br />
       <div className="row text-black" id="">
+        <p className="text-black h4">Feel free to reach out for collaborations, freelance projects, or full-time opportunities.</p>
         <h4 className="col-sm my-3">
           <a href="tel:+2348072178062" className="text-black text-decoration-none">
             <img src={phone1} alt="" width="25px" /> 08072178062</a>
@@ -395,6 +395,7 @@ export const Home = () => {
               <div className="modal-body">
                
               <div className=" text-black" id="">
+                <p className="text-black h4">Feel free to reach out for collaborations, freelance projects, or full-time opportunities.</p>
         <h4 className="my-3">
           <a href="tel:+2348072178062" className="text-black text-decoration-none">
             <img src={phone1} alt="" width="25px" /> 08072178062</a>
