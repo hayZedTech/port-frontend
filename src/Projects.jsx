@@ -11,6 +11,7 @@ import chat_img from "./Images/chat.jpg";
 import ecommerce from "./Images/ecommerce.png";
 import exam002 from "./Images/exam002.png";
 import blog from "./Images/blog.png";
+import stripe_dashboard from "./Images/stripe_dashboard.png"; // add actual image of your dashboard
 
 export const Projects = () => {
   const [showModal, setShowModal] = useState(false);
@@ -18,9 +19,17 @@ export const Projects = () => {
   const [activeProject, setActiveProject] = useState(1); // default project ID
 
   const projects = [
-   
-     {
+    {
       id: 1,
+      title: "Multi-Tenant SaaS Billing Dashboard",
+      desc: "Developed a full-featured multi-tenant SaaS dashboard with subscription management and Stripe integration. Implements role-based access control, real-time project management, and secure API endpoints. Users can create projects, manage subscriptions, and perform payments via Stripe Checkout. Built with React, Node.js, Express, PostgreSQL, and Bootstrap, demonstrating full-stack expertise.",
+      img: stripe_dashboard, // replace with actual screenshot/image of this project
+      link: "https://saas-billing-frontend.vercel.app", // add your live/demo link
+      languages: ["HTML", "CSS", "React", "Node.js", "Express.js", "PostgreSQL", "Bootstrap", "Stripe API"],
+    },
+
+    {
+      id: 2,
       title: "Chat App",
       desc: "Chat with your friends in real-time.",
       img: chat_img,
@@ -29,7 +38,7 @@ export const Projects = () => {
     },
 
     {
-      id: 2,
+      id: 3,
       title: "Exam App 1",
       desc: "Practice here.",
       img: exam002,
@@ -37,8 +46,8 @@ export const Projects = () => {
       languages: ["HTML", "CSS", "React", "JavaScript", "Bootstrap"],
     },
 
-     {
-      id: 3,
+    {
+      id: 4,
       title: "Exam App 2",
       desc: "Write your exams with ease.",
       img: cbt_image,
@@ -47,7 +56,7 @@ export const Projects = () => {
     },
 
     {
-      id: 4,
+      id: 5,
       title: "Ecommerce Website",
       desc: "Shop with us anytime, anywhere.",
       img: ecommerce,
@@ -56,7 +65,7 @@ export const Projects = () => {
     },
 
     {
-      id: 5,
+      id: 6,
       title: "Blog Website",
       desc: "Visit Jimmarof Blog",
       img: blog,

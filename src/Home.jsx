@@ -217,13 +217,23 @@ export const Home = () => {
                     </div>
                   </div>
 
-                  <div>
+                  <div className="mb-3">
                     <span className="d-flex align-items-center fw-semibold">
                       <img src="/icons/git.png" alt="Git" width="28" className="me-2" />
                       Git & GitHub
                     </span>
                     <div className="progress mt-2">
                       <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+
+                   <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/stripe.png" alt="Stripe" width="28" className="me-2" />
+                      Stripe API · SaaS Dashboard
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "95%" }}></div>
                     </div>
                   </div>
                 </div>

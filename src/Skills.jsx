@@ -35,7 +35,7 @@ export const Skills = () => {
                       CSS
                     </span>
                     <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated  bg-info" style={{ width: "100%" }}></div>
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
                     </div>
                   </div>
 
@@ -110,13 +110,24 @@ export const Skills = () => {
                     </div>
                   </div>
 
-                  <div>
+                  <div className="mb-3">
                     <span className="d-flex align-items-center fw-semibold">
                       <img src="/icons/git.png" alt="Git" width="28" className="me-2" />
                       Git & GitHub
                     </span>
                     <div className="progress mt-2">
                       <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+
+
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/stripe.png" alt="Stripe" width="28" className="me-2" />
+                      Stripe API · SaaS Dashboard
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "95%" }}></div>
                     </div>
                   </div>
                 </div>
@@ -133,7 +144,6 @@ export const Skills = () => {
 
                   <div className="mb-3">
                     <span className="d-flex align-items-center fw-semibold">
-                      {/* <img src="/icons/design/ux.svg" alt="UX" width="28" className="me-2" /> */}
                       Wireframing · User Flows · Prototyping
                     </span>
                     <div className="progress mt-2">
@@ -143,7 +153,6 @@ export const Skills = () => {
 
                   <div className="mb-3">
                     <span className="d-flex align-items-center fw-semibold">
-                      {/* <img src="/icons/design/ui.svg" alt="UI" width="28" className="me-2" /> */}
                       Design Systems · Accessibility (WCAG)
                     </span>
                     <div className="progress mt-2">
@@ -153,7 +162,6 @@ export const Skills = () => {
 
                   <div className="mb-3">
                     <span className="d-flex align-items-center fw-semibold">
-                      {/* <img src="/icons/design/figma.svg" alt="Figma" width="28" className="me-2" /> */}
                       Figma (Prototyping, Interactive Components)
                     </span>
                     <div className="progress mt-2">
@@ -163,7 +171,6 @@ export const Skills = () => {
 
                   <div>
                     <span className="d-flex align-items-center fw-semibold">
-                      {/* <img src="/icons/design/photoshop.svg" alt="Photoshop" width="28" className="me-2" /> */}
                       Photoshop (UI Asset Optimization, Web Mockups)
                     </span>
                     <div className="progress mt-2">
