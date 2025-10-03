@@ -34,7 +34,7 @@ export const Projects = () => {
       title: "Realtime Vibestream App",
       desc: "A real-time social media platform with private and group chat, instant notifications, and conversation management. Built with React for the frontend and Node.js + Express for backend APIs. Integrated Socket.io for real-time messaging and MongoDB for scalable data storage. Deployed seamlessly on Vercel (frontend) and Render (backend).",
       img: vibestream,
-      link: "https://vibestream-frontend.vercel.app/",
+      link: "https://vibestream-frontend-beige.vercel.app/",
       languages: ["HTML", "CSS", "React", "Node.js", "Express.js", "MongoDB", "Bootstrap", "Socket.io"],
     },
 
