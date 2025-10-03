@@ -11,7 +11,8 @@ import chat_img from "./Images/chat.jpg";
 import ecommerce from "./Images/ecommerce.png";
 import exam002 from "./Images/exam002.png";
 import blog from "./Images/blog.png";
-import stripe_dashboard from "./Images/stripe_dashboard.png"; // add actual image of your dashboard
+import stripe_dashboard from "./Images/stripe_dashboard.png"; 
+import vibestream from "./Images/vibestream.png";
 
 export const Projects = () => {
   const [showModal, setShowModal] = useState(false);
@@ -23,51 +24,60 @@ export const Projects = () => {
       id: 1,
       title: "Multi-Tenant SaaS Billing Dashboard",
       desc: "Developed a full-featured multi-tenant SaaS dashboard with subscription management and Stripe integration. Implements role-based access control, real-time project management, and secure API endpoints. Users can create projects, manage subscriptions, and perform payments via Stripe Checkout. Built with React, Node.js, Express, PostgreSQL, and Bootstrap, demonstrating full-stack expertise.",
-      img: stripe_dashboard, // replace with actual screenshot/image of this project
-      link: "https://saas-billing-frontend.vercel.app", // add your live/demo link
+      img: stripe_dashboard,
+      link: "https://saas-billing-frontend.vercel.app",
       languages: ["HTML", "CSS", "React", "Node.js", "Express.js", "PostgreSQL", "Bootstrap", "Stripe API"],
     },
 
     {
       id: 2,
+      title: "Realtime Vibestream App",
+      desc: "A real-time social media platform with private and group chat, instant notifications, and conversation management. Built with React for the frontend and Node.js + Express for backend APIs. Integrated Socket.io for real-time messaging and MongoDB for scalable data storage. Deployed seamlessly on Vercel (frontend) and Render (backend).",
+      img: vibestream,
+      link: "https://vibestream-frontend.vercel.app/",
+      languages: ["HTML", "CSS", "React", "Node.js", "Express.js", "MongoDB", "Bootstrap", "Socket.io"],
+    },
+
+    {
+      id: 3,
       title: "Chat App",
-      desc: "Chat with your friends in real-time.",
+      desc: "A lightweight chat application that allows users to communicate in real-time. Built with React for UI, Node.js + Express for backend logic, and PostgreSQL for persistent message storage. Designed with Bootstrap for a clean, responsive interface. Demonstrates real-time data flow and user-friendly design.",
       img: chat_img,
       link: "https://chat-frontend-wslj.vercel.app/",
       languages: ["HTML", "CSS","React", "Node.js", "Express.js", "PostgreSQL", "Bootstrap"],
     },
 
     {
-      id: 3,
+      id: 4,
       title: "Exam App 1",
-      desc: "Practice here.",
+      desc: "An interactive exam practice platform where students can take subject-based quizzes. Built with React for a smooth user experience, Bootstrap for design, and JavaScript for quiz logic. Focused on accessibility, fast performance, and reusability for different exam subjects.",
       img: exam002,
       link: "/Biology01",
       languages: ["HTML", "CSS", "React", "JavaScript", "Bootstrap"],
     },
 
     {
-      id: 4,
+      id: 5,
       title: "Exam App 2",
-      desc: "Write your exams with ease.",
+      desc: "A computer-based testing (CBT) platform designed for conducting online exams. Built with PHP and PostgreSQL for backend management, JavaScript and jQuery for interactive features, and Bootstrap for layout. Supports secure question rendering and student submissions with responsive UI.",
       img: cbt_image,
       link: "https://hayzed-exam.onrender.com",
       languages: ["HTML", "CSS", "JavaScript", "JQuery", "PHP", "Bootstrap", "PostgreSQL"],
     },
 
     {
-      id: 5,
+      id: 6,
       title: "Ecommerce Website",
-      desc: "Shop with us anytime, anywhere.",
+      desc: "A fully functional ecommerce website where users can browse products, add to cart, and purchase online. Built with PHP and MySQL for backend, Bootstrap and jQuery for frontend interactivity, and responsive layouts for a smooth shopping experience. Deployed as a production website for real users.",
       img: ecommerce,
       link: "https://jimmarof.com",
       languages: ["HTML", "CSS", "PHP", "JavaScript", "Bootstrap", "JQuery", "MYSQL"],
     },
 
     {
-      id: 6,
+      id: 7,
       title: "Blog Website",
-      desc: "Visit Jimmarof Blog",
+      desc: "A dynamic blog platform allowing users to read and interact with published articles. Developed using PHP and MySQL for backend content management, Bootstrap for design, and jQuery + JavaScript for interactivity. Features include multiple blog categories, clean UI, and responsive design.",
       img: blog,
       link: "https://jimmarof.com/jimmarof_blog/index.php",
       languages: ["HTML", "CSS", "PHP", "JavaScript", "Bootstrap", "JQuery", "MYSQL"],
@@ -131,7 +141,12 @@ export const Projects = () => {
                     <h5 className="card-title fw-bold text-white">
                       {currentProject.title}
                     </h5>
-                    <p className="card-text text-white">{currentProject.desc}</p>
+                    {/* 🔹 Truncate description here */}
+                    <p className="card-text text-white">
+                      {currentProject.desc.length > 100
+                        ? currentProject.desc.slice(0, 100) + "..."
+                        : currentProject.desc}
+                    </p>
                   </div>
                 </motion.div>
               )}
@@ -153,6 +168,7 @@ export const Projects = () => {
                 alt={selectedProject.title}
                 className="img-fluid rounded mb-3"
               />
+              {/* 🔹 Full description shown here */}
               <p>{selectedProject.desc}</p>
               <h6>Languages and Frameworks Used:</h6>
               <ul>

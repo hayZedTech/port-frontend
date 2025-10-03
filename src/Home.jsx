@@ -6,19 +6,7 @@ import facebook from "./Images/facebook.png";
 import insta1 from "./Images/insta1.png";
 import linkendin from "./Images/linkendin.png";
 import whatsapp from "./Images/whatsapp.png";
-import html1 from "./Images/html1.png";
-import css1 from "./Images/css1.png";
-import js1 from "./Images/js1.png";
-import bootstrap1 from "./Images/bootstrap1.png";
-import jquery1 from "./Images/jquery1.png";
-import php1 from "./Images/php1.png";
-import typescript from "./Images/typescript.png";
-import react1 from "./Images/react1.png";
-import node from "./Images/node.png";
 
-import cbt_image from "./Images/cbt_image.png";
-import chat_img from "./Images/chat_img.jpg";
-import ecommerce from "./Images/ecommerce.png";
 import App from "./MessageForm";
 import { Footer } from "./Layout";
 import { Projects } from "./Projects";
@@ -214,6 +202,39 @@ export const Home = () => {
                     </span>
                     <div className="progress mt-2">
                       <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+
+                   {/* MongoDB & Mongoose */}
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/mongodb.png" alt="MongoDB" width="28" className="me-2" />
+                      MongoDB & Mongoose
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+
+                  {/* Socket.io */}
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/socketio.png" alt="Socket.io" width="28" className="me-2" />
+                      Real-time Communication (Socket.io)
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+
+                  {/* Deployment */}
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/deploy.png" alt="Deployment" width="28" className="me-2" />
+                      Deployment (Vercel · Render)
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "95%" }}></div>
                     </div>
                   </div>
 

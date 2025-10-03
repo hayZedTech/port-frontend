@@ -110,6 +110,39 @@ export const Skills = () => {
                     </div>
                   </div>
 
+                  {/* MongoDB & Mongoose */}
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/mongodb.png" alt="MongoDB" width="28" className="me-2" />
+                      MongoDB & Mongoose
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+
+                  {/* Socket.io */}
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/socketio.png" alt="Socket.io" width="28" className="me-2" />
+                      Real-time Communication (Socket.io)
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
+                    </div>
+                  </div>
+
+                  {/* Deployment */}
+                  <div className="mb-3">
+                    <span className="d-flex align-items-center fw-semibold">
+                      <img src="/icons/deploy.png" alt="Deployment" width="28" className="me-2" />
+                      Deployment (Vercel · Render)
+                    </span>
+                    <div className="progress mt-2">
+                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "95%" }}></div>
+                    </div>
+                  </div>
+
                   <div className="mb-3">
                     <span className="d-flex align-items-center fw-semibold">
                       <img src="/icons/git.png" alt="Git" width="28" className="me-2" />
@@ -119,7 +152,6 @@ export const Skills = () => {
                       <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
                     </div>
                   </div>
-
 
                   <div className="mb-3">
                     <span className="d-flex align-items-center fw-semibold">
