@@ -21,25 +21,36 @@ export const Projects = () => {
 
   const projects = [
     
-
     {
       id: 1,
+      title: "Chat App",
+      desc: "A lightweight and fully featured real-time chat application built with React for the frontend, Node.js + Express for the backend, and PostgreSQL for data storage. It includes features such as real-time messaging with Socket.IO (both public and private), optimistic UI updates for instant feedback, message delivery and read receipts, inline reply and message editing/deleting, emoji reactions, file and image uploads with previews and progress tracking, and voice note recording and playback. The app also supports browser notifications with sound alerts, typing indicators, online presence tracking, grouped messages by date, auto-resizing message input, media previews and downloads, and graceful socket reconnection. Styled with Bootstrap for a clean, responsive, and accessible interface.",
+      img: chat_img,
+      link: "https://chat-realtime-front.vercel.app/",
+      languages: [
+        "HTML",
+        "CSS",
+        "React",
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+        "Bootstrap",
+        "Socket.IO",
+        "Axios",
+        "Web Audio API / MediaRecorder",
+        "React Icons"
+      ]
+    },
+
+    {
+      id: 2,
       title: "Realtime Vibestream App",
       desc: "A real-time social media platform with private and group chat, instant notifications, and conversation management. Built with React for the frontend and Node.js + Express for backend APIs. Integrated Socket.io for real-time messaging and MongoDB for scalable data storage. Deployed seamlessly on Vercel (frontend) and Render (backend).",
       img: vibestream,
       link: "https://vibestream-frontend-beige.vercel.app/",
       languages: ["HTML", "CSS", "React", "Node.js", "Express.js", "MongoDB", "Bootstrap", "Socket.io"],
     },
-
-    {
-      id: 2,
-      title: "Chat App",
-      desc: "A lightweight chat application that allows users to communicate in real-time. Built with React for UI, Node.js + Express for backend logic, and PostgreSQL for persistent message storage. Designed with Bootstrap for a clean, responsive interface. Demonstrates real-time data flow and user-friendly design.",
-      img: chat_img,
-      link: "https://chat-frontend-wslj.vercel.app/",
-      languages: ["HTML", "CSS","React", "Node.js", "Express.js", "PostgreSQL", "Bootstrap"],
-    },
-
+    
     {
       id: 3,
       title: "Exam App 1",
