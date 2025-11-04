@@ -13,6 +13,7 @@ import exam002 from "./Images/exam002.png";
 import blog from "./Images/blog.png";
 import stripe_dashboard from "./Images/stripe_dashboard.png"; 
 import vibestream from "./Images/vibestream.png";
+import dashboard from "./Images/dashboard.png"; // ✅ new dashboard image
 
 export const Projects = () => {
   const [showModal, setShowModal] = useState(false);
@@ -20,7 +21,6 @@ export const Projects = () => {
   const [activeProject, setActiveProject] = useState(1); // default project ID
 
   const projects = [
-    
     {
       id: 1,
       title: "Chat App",
@@ -94,6 +94,26 @@ export const Projects = () => {
       img: stripe_dashboard,
       link: "https://saas-billing-frontend.vercel.app",
       languages: ["HTML", "CSS", "React", "Node.js", "Express.js", "PostgreSQL", "Bootstrap", "Stripe API"],
+    },
+
+    // ✅ New project added from Dashboard
+    {
+      id: 8,
+      title: "Expense Management Dashboard",
+      desc: "A responsive expense tracking dashboard built with React, TypeScript, and Supabase. Features include CRUD operations for budgets and expenses, category-based charts using Recharts, and smooth UI interactions with Framer Motion and SweetAlert2. Users can view, edit, and delete expenses with loading spinners and instant visual feedback. Designed with modular components and a Tailwind CSS utility-first layout for clean, modern, and consistent presentation.",
+      img: dashboard,
+      link: "https://expense-dashboard.vercel.app", // change if needed
+      languages: [
+        "React",
+        "TypeScript",
+        "Supabase",
+        "Recharts",
+        "Framer Motion",
+        "SweetAlert2",
+        "Tailwind",
+        "Vite",
+        "Zustand"
+      ]
     }
   ];
 
@@ -106,20 +126,20 @@ export const Projects = () => {
 
   return (
     <>
-      <section className="bg-light py-5">
-        <h3 className="text-info text-center mb-4 fw-bold">MY PROJECTS</h3>
+      <section className="bg-light py-4">
+        <h3 className="text-info text-center mb-3 fw-bold">MY PROJECTS</h3>
 
         <div className="container">
           <div className="row">
             {/* Sidebar for project names */}
             <div className="col-md-4 mb-4">
               <div className="card shadow-lg border-0 h-100 p-3">
-                <h5 className="fw-bold text-center text-primary mb-3">Projects</h5>
+                {/* <h5 className="fw-bold text-center text-primary mb-3">Projects</h5> */}
                 <ul className="list-group">
                   {projects.map((project) => (
                     <li
                       key={project.id}
-                      className={`list-group-item list-group-item-action ${
+                      className={`list-group-item list-group-item-action py-2 h6 ${
                         activeProject === project.id ? "active" : ""
                       }`}
                       style={{ cursor: "pointer" }}
@@ -147,7 +167,7 @@ export const Projects = () => {
                     src={currentProject.img}
                     alt={currentProject.title}
                     className="card-img-top"
-                    style={{ height: "180px", width:"100%", objectFit: "fill" }}
+                    style={{ height: "180px", width: "100%", objectFit: "fill" }}
                     whileHover={{ scale: 1.05 }}
                   />
                   <div className="card-body text-center bg-primary rounded-bottom">
