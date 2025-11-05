@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import { Footer } from "./Layout";
+// import { Footer } from "./Layout";
 import { motion } from "framer-motion";
 import { Modal } from "react-bootstrap"; 
 import "bootstrap/dist/css/bootstrap.min.css";
