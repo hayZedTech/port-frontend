@@ -13,7 +13,7 @@ import exam002 from "./Images/exam002.png";
 import blog from "./Images/blog.png";
 import stripe_dashboard from "./Images/stripe_dashboard.png"; 
 import vibestream from "./Images/vibestream.png";
-import expenses from "./Images/expenses.png"; 
+// import expenses from "./Images/expenses.png"; 
 
 export const Projects = () => {
   const [showModal, setShowModal] = useState(false);
@@ -47,7 +47,7 @@ export const Projects = () => {
       id: 2,
       title: "Expense Management Dashboard",
       desc: "A responsive expense tracking dashboard built with React, TypeScript, and Supabase. Features include CRUD operations for budgets and expenses, category-based charts using Recharts, and smooth UI interactions with Framer Motion and SweetAlert2. Users can view, edit, and delete expenses with loading spinners and instant visual feedback. Designed with modular components and a Tailwind CSS utility-first layout for clean, modern, and consistent presentation.",
-      img: expenses,
+      img: stripe_dashboard,
       link: "https://expenses-tracker-swart-eight.vercel.app/",
       languages: [
         "React",
