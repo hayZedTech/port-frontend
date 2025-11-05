@@ -13,7 +13,7 @@ import exam002 from "./Images/exam002.png";
 import blog from "./Images/blog.png";
 import stripe_dashboard from "./Images/stripe_dashboard.png"; 
 import vibestream from "./Images/vibestream.png";
-import dashboard from "./Images/dashboard.png"; // ✅ new dashboard image
+import expenses from "./Images/expenses.png"; 
 
 export const Projects = () => {
   const [showModal, setShowModal] = useState(false);
@@ -42,15 +42,27 @@ export const Projects = () => {
       ]
     },
 
+
     {
       id: 2,
-      title: "Realtime Vibestream App",
-      desc: "A real-time social media platform with private and group chat, instant notifications, and conversation management. Built with React for the frontend and Node.js + Express for backend APIs. Integrated Socket.io for real-time messaging and MongoDB for scalable data storage. Deployed seamlessly on Vercel (frontend) and Render (backend).",
-      img: vibestream,
-      link: "https://vibestream-frontend-beige.vercel.app/",
-      languages: ["HTML", "CSS", "React", "Node.js", "Express.js", "MongoDB", "Bootstrap", "Socket.io"],
+      title: "Expense Management Dashboard",
+      desc: "A responsive expense tracking dashboard built with React, TypeScript, and Supabase. Features include CRUD operations for budgets and expenses, category-based charts using Recharts, and smooth UI interactions with Framer Motion and SweetAlert2. Users can view, edit, and delete expenses with loading spinners and instant visual feedback. Designed with modular components and a Tailwind CSS utility-first layout for clean, modern, and consistent presentation.",
+      img: expenses,
+      link: "https://expenses-tracker-swart-eight.vercel.app/",
+      languages: [
+        "React",
+        "TypeScript",
+        "Supabase",
+        "Recharts",
+        "Framer Motion",
+        "SweetAlert2",
+        "Tailwind",
+        "Vite",
+        "Zustand"
+      ]
     },
-    
+
+   
     {
       id: 3,
       title: "Exam App 1",
@@ -96,25 +108,16 @@ export const Projects = () => {
       languages: ["HTML", "CSS", "React", "Node.js", "Express.js", "PostgreSQL", "Bootstrap", "Stripe API"],
     },
 
-    // ✅ New project added from Dashboard
-    {
+     {
       id: 8,
-      title: "Expense Management Dashboard",
-      desc: "A responsive expense tracking dashboard built with React, TypeScript, and Supabase. Features include CRUD operations for budgets and expenses, category-based charts using Recharts, and smooth UI interactions with Framer Motion and SweetAlert2. Users can view, edit, and delete expenses with loading spinners and instant visual feedback. Designed with modular components and a Tailwind CSS utility-first layout for clean, modern, and consistent presentation.",
-      img: dashboard,
-      link: "https://expense-dashboard.vercel.app", // change if needed
-      languages: [
-        "React",
-        "TypeScript",
-        "Supabase",
-        "Recharts",
-        "Framer Motion",
-        "SweetAlert2",
-        "Tailwind",
-        "Vite",
-        "Zustand"
-      ]
+      title: "Realtime Vibestream App",
+      desc: "A real-time social media platform with private and group chat, instant notifications, and conversation management. Built with React for the frontend and Node.js + Express for backend APIs. Integrated Socket.io for real-time messaging and MongoDB for scalable data storage. Deployed seamlessly on Vercel (frontend) and Render (backend).",
+      img: vibestream,
+      link: "https://vibestream-frontend-beige.vercel.app/",
+      languages: ["HTML", "CSS", "React", "Node.js", "Express.js", "MongoDB", "Bootstrap", "Socket.io"],
     }
+    
+    
   ];
 
   const openModal = (project) => {
