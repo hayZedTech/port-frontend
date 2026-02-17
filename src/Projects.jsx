@@ -14,13 +14,22 @@ import stripe_dashboard from "./Images/stripe_dashboard.png";
 import vibestream from "./Images/vibestream.png";
 import expenses from "./Images/expenses.png"; 
 import award from "./Images/award.png"; 
+import habit_tracker from "./Images/habit_tracker.png"; 
 
 export const Projects = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [activeProject, setActiveProject] = useState(1); // default project ID
+  const [activeProject, setActiveProject] = useState(10); // set Habit Tracker as default
 
   const projects = [
+    {
+      id: 10,
+      title: "Momentum Habit Tracker (Mobile)",
+      desc: "A high-performance mobile application designed for consistency. It features secure authentication, real-time data synchronization via Appwrite WebSockets, and dynamic progress analytics using interactive charts. Built with a focus on fluid UX and native performance.",
+      img: habit_tracker,
+      link: "https://github.com/hayzedTech/Habit_Tracker_App",
+      languages: ["React Native", "Expo", "TypeScript", "Appwrite", "React Native Paper", "Chart Kit"]
+    },
     {
       id: 1,
       title: "Chat App",
@@ -100,7 +109,6 @@ export const Projects = () => {
     setShowModal(true);
   };
 
-  // 🔹 Logic: Update active project on all screens, but trigger modal only on mobile (< 768px)
   const handleProjectClick = (project) => {
     setActiveProject(project.id);
     if (window.innerWidth < 768) {
@@ -117,7 +125,6 @@ export const Projects = () => {
 
         <div className="container">
           <div className="row">
-            {/* Sidebar for project names */}
             <div className="col-md-4 mb-4">
               <div className="card shadow-lg border-0 h-100 p-3">
                 <ul className="list-group">
@@ -128,7 +135,7 @@ export const Projects = () => {
                         activeProject === project.id ? "active" : ""
                       }`}
                       style={{ cursor: "pointer" }}
-                      onClick={() => handleProjectClick(project)} // 🔹 Updated handler
+                      onClick={() => handleProjectClick(project)}
                     >
                       {project.title}
                     </li>
@@ -137,11 +144,10 @@ export const Projects = () => {
               </div>
             </div>
 
-            {/* Main project display */}
             <div className="col-md-8">
               {currentProject && (
                 <motion.div
-                  key={currentProject.id} // Added key to trigger animation on project change
+                  key={currentProject.id}
                   className="card shadow-lg border-0"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -174,7 +180,6 @@ export const Projects = () => {
         </div>
       </section>
 
-      {/* Modal for project details */}
       <Modal show={showModal} onHide={() => setShowModal(false)} centered size="lg">
         {selectedProject && (
           <>
@@ -205,7 +210,7 @@ export const Projects = () => {
                 rel="noopener noreferrer"
                 className="btn btn-primary w-100"
               >
-                Launch Project Website
+                {selectedProject.id === 10 ? "View on GitHub / Download APK" : "Launch Project Website"}
               </a>
             </Modal.Footer>
           </>
