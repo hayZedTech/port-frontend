@@ -8,6 +8,8 @@ import { Projects } from "./Projects";
 import { Contacts } from "./Contacts";
 import { Nopage } from "./Nopage";
 
+import ResetPasswordRedirect from "./ResetPasswordRedirect";
+
 import { AuthProvider } from "./AuthContext";
 import { Biology01 } from "./exam/Biology01";
 import { Ecommerce } from "./ecommerce/Ecommerce";
@@ -27,6 +29,7 @@ export const MyPortFolioRouting = () => {
             <Route path="projects" element={<Projects />} />
             <Route path="contacts" element={<Contacts />} />
             <Route path="biology01" element={<Biology01 />} />
+            <Route path="/reset-password" element={<ResetPasswordRedirect />} />
             
             {/* Ecommerce Nested Routing */}
             <Route path="ecommerce/*" element={<Ecommerce />} />
