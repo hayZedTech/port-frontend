@@ -7,8 +7,9 @@ export default function ResetPasswordRedirect() {
     const secret = params.get("secret");
 
     if (userId && secret) {
+      // Use the exact scheme from app.json
       window.location.href =
-        `myapp://reset-password?userId=${userId}&secret=${secret}`;
+        `personalinventory://reset-password?userId=${userId}&secret=${secret}`;
     }
   }, []);
 
