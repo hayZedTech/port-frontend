@@ -9,7 +9,7 @@ export default function ResetPasswordRedirect() {
     if (userId && secret) {
       // Use the exact scheme from app.json
       window.location.href =
-        `personalinventory://reset-password?userId=${userId}&secret=${secret}`;
+        `pitest://reset-password?userId=${userId}&secret=${secret}`;
     }
   }, []);
 
