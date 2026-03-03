@@ -15,13 +15,24 @@ import vibestream from "./Images/vibestream.png";
 import expenses from "./Images/expenses.png"; 
 import award from "./Images/award.png"; 
 import habit_tracker from "./Images/habit_tracker.png"; 
+// 1. Add your new image import here
+import personal_inventory from "./Images/personal_inventory.png"; 
 
 export const Projects = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [activeProject, setActiveProject] = useState(10); // set Habit Tracker as default
+  // 2. Updated default to ID 11
+  const [activeProject, setActiveProject] = useState(11); 
 
   const projects = [
+    {
+      id: 11,
+      title: "Personal Inventory (Mobile)",
+      desc: "A smart cloud-based pantry management system. It features a high-speed barcode scanner that integrates with the Open Food Facts API and a custom Appwrite backend. It includes intelligent 'already-in-stock' detection, automated expiry date tracking with urgent alerts, and real-time inventory synchronization across devices.",
+      img: personal_inventory,
+      link: "https://github.com/hayzedTech/Personal-Inventory", // Update with your actual repo
+      languages: ["React Native", "Expo", "TypeScript", "Appwrite", "Barcode Scanner", "Context API"]
+    },
     {
       id: 10,
       title: "Momentum Habit Tracker (Mobile)",
@@ -210,7 +221,7 @@ export const Projects = () => {
                 rel="noopener noreferrer"
                 className="btn btn-primary w-100"
               >
-                {selectedProject.id === 10 ? "View on GitHub / Download APK" : "Launch Project Website"}
+                {[10, 11].includes(selectedProject.id) ? "View on GitHub / Download APK" : "Launch Project Website"}
               </a>
             </Modal.Footer>
           </>
