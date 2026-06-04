@@ -1,4 +1,7 @@
-import { Link, Outlet } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Outlet } from "react-router-dom";
+
+// Image Assets
 import prof1 from "./Images/prof1.jpg";
 import phone1 from "./Images/phone1.png";
 import email1 from "./Images/email1.png";
@@ -7,451 +10,299 @@ import insta1 from "./Images/insta1.png";
 import linkendin from "./Images/linkendin.png";
 import whatsapp from "./Images/whatsapp.png";
 
-import App from "./MessageForm";
-import { Footer } from "./Layout";
+// Subsection Section Components
+import { About } from "./About";
+import { Services } from "./Services";
+import { Skills } from "./Skills";
 import { Projects } from "./Projects";
-
-
-
+import { Contacts } from "./Contacts";
+import { Footer } from "./Layout";
 
 export const Home = () => {
-  // const d =new Date();
-  //  d.getFullYear();
+  const socials = [
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/azeez-ololade-musa-b0b20925b", img: linkendin },
+    { name: "WhatsApp", href: "https://wa.me/2348072178062", img: whatsapp },
+    { name: "Instagram", href: "https://www.instagram.com/azeez.m59/", img: insta1 },
+    { name: "Facebook", href: "https://web.facebook.com/", img: facebook }
+  ];
+
+  // Text Cascade Stagger Configs
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12, // Gap between item reveal
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 25 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.5, ease: "easeOut" } 
+    }
+  };
+
   return (
     <>
-    <section className='section1 row pt-5 my-5'>
-      <div className="col-sm text-center " >
-          <div>
-          <img src={prof1} alt="profile image" className='rounded rounded-circle prof_img' />
+      {/* Hero Section */}
+      <section id="hero" className="bg-light py-5 min-vh-100 d-flex align-items-center" style={{ fontFamily: "inherit" }}>
+        <div className="container px-4 px-md-5">
+          <div className="row align-items-center justify-content-center g-5">
+            
+            {/* Profile Image Column */}
+            <div className="col-12 col-md-5 text-center order-first order-md-last">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="position-relative d-inline-block"
+              >
+                {/* Micro-Interaction Ambient Floating Aura Background */}
+                <motion.div 
+                  className="position-absolute top-50 start-50 translate-middle rounded-circle"
+                  style={{
+                    width: "calc(100% + 24px)",
+                    height: "calc(100% + 24px)",
+                    background: "linear-gradient(135deg, #0dcaf0 0%, #0d6efd 100%)",
+                    zIndex: 0,
+                    opacity: 0.15
+                  }}
+                  animate={{
+                    scale: [1, 1.04, 1],
+                    opacity: [0.15, 0.22, 0.15]
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                ></motion.div>
+                
+                {/* Floating Avatar Frame */}
+                <motion.img 
+                  src={prof1} 
+                  alt="Azeez Ololade Profile" 
+                  className="img-fluid rounded-circle position-relative shadow-lg border border-4 border-white" 
+                  style={{ 
+                    maxWidth: "320px", 
+                    width: "100%", 
+                    height: "auto", 
+                    aspectRatio: "1/1", 
+                    objectFit: "cover",
+                    zIndex: 1
+                  }} 
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+              </motion.div>
+            </div>
+
+            {/* Profile Text Typography Column */}
+            <div className="col-12 col-md-7 text-center text-md-start">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.span 
+                  variants={itemVariants}
+                  className="text-info text-uppercase tracking-widest fw-bold mb-2 d-block" 
+                  style={{ letterSpacing: "2px", fontSize: "0.9rem" }}
+                >
+                  Welcome to my engineering space
+                </motion.span>
+                
+                <motion.h2 variants={itemVariants} className="text-secondary fw-normal mb-1">Hello, I'm</motion.h2>
+                
+                <motion.h1 
+                  variants={itemVariants}
+                  className="text-dark fw-black display-3 mb-2 tracking-tight" 
+                  style={{ fontWeight: "900" }}
+                >
+                  AZEEZ OLOLADE
+                </motion.h1>
+                
+                <motion.h3 variants={itemVariants} className="text-muted fw-semibold fs-3 mb-4">
+                  Full Stack Developer & Mentor
+                </motion.h3>
+                
+                <motion.p 
+                  variants={itemVariants}
+                  className="text-secondary mb-4 max-w-xl fs-5 lh-base" 
+                  style={{ maxWidth: "560px" }}
+                >
+                  Architecting robust backend processing systems, responsive user interfaces, and high-performance cross-platform mobile environments.
+                </motion.p>
+
+                {/* Functional Interactive Trigger Node */}
+                <motion.div variants={itemVariants} className="mb-5">
+                  <motion.button 
+                    type="button" 
+                    className="btn btn-info text-white px-4 py-2.5 rounded-pill shadow-sm fw-bold border-0" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#myModal"
+                    whileHover={{ 
+                      scale: 1.05, 
+                      boxShadow: "0 10px 25px -5px rgba(13,202,240,0.5)" 
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Contact Info
+                  </motion.button>
+                </motion.div>
+
+                {/* Social Channels Dock */}
+                <motion.div variants={itemVariants}>
+                  <div className="d-flex justify-content-center justify-content-md-start gap-3">
+                    {socials.map((social, index) => (
+                      <motion.a
+                        key={index}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white border rounded-circle d-flex align-items-center justify-content-center shadow-sm"
+                        style={{ width: "50px", height: "50px" }}
+                        whileHover={{ 
+                          scale: 1.15, 
+                          y: -4,
+                          borderColor: "#0dcaf0", 
+                          boxShadow: "0 10px 20px rgba(13,202,240,0.15)" 
+                        }}
+                        whileTap={{ scale: 0.95 }}
+                        title={social.name}
+                      >
+                        <img 
+                          src={social.img} 
+                          alt={social.name} 
+                          width="24" 
+                          height="24" 
+                          className="p-0.5 object-contain" 
+                        />
+                      </motion.a>
+                    ))}
+                  </div>
+                </motion.div>
+
+              </motion.div>
+            </div>
+
           </div>
-      </div>
-
-      <div className="col-sm prof_text" >
-          <div>
-          <h2>Hello, I'm</h2>
-            <h1 className="fw-bolder"> AZEEZ OLOLADE</h1>
-                <h3>Full Stack Developer</h3>
-
-                <button type="button" className="btn btn-info text-white px-4 mt-4" data-bs-toggle="modal" data-bs-target="#myModal"><b>Contact Info</b></button>
- 
-              <div className="mt-5 sect1b">
-                <a href="https://web.facebook.com/" className="text-decoration-none"><img src={facebook} alt="" width={"55px"} className="p-2 " /> </a>
-                
-                                <a href="https://www.instagram.com/azeez.m59/" className="text-decoration-none mx-4"><img src={insta1} alt="" width={"55px"} className="p-2 " /> </a>
-                
-                                <a href="https://www.linkedin.com/in/azeez-ololade-musa-b0b20925b" className="text-decoration-none"><img src={linkendin} alt="" width={"55px"} className="p-1 " /> </a>
-                
-                                <a href="https://wa.me/08072178062" className="text-decoration-none ms-4"><img src={whatsapp} alt="" width={"55px"} className="p-2 " /> </a>
-                              </div>
-                              {/* links ends here */}
-          </div>
-      </div>
-      </section>
-      {/* Home ends here */}
-
-
-      <section className="about mx-5 my-5" data-aos="fade-up">
-      
-            <div className="text-black">
-                <h3 className="text-info text-center"><b>ABOUT ME</b></h3>
-            <h2 className="text-center my-3"> Full Stack Developer</h2>
-                <h5 className="">
-              I am a versatile Full Stack Developer skilled in both front-end and back-end development. From crafting responsive user interfaces to managing databases and server-side logic, I build scalable and user-friendly applications. My adaptability across the entire stack allows me to deliver efficient and robust solutions in any development environment.
-                </h5>
         </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-5 bg-white" data-aos="fade-up">
+        <About />
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-5 bg-light" data-aos="fade-up">
+        <Services />
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-5 bg-white" data-aos="fade-up">
+        <Skills />
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-5 bg-light" data-aos="fade-up">
+        <Projects />
+      </section>
+
+      {/* Contacts Section */}
+      <section id="contacts" className="py-5 bg-white" data-aos="fade-up">
+        <Contacts />
+      </section>
     
-      </section>
-       {/* about ends here */}
+      {/* Global Page Footer Component */}
+      <Footer />
 
-
-
-       <section className="services"  data-aos="fade-up">
-        <h3 className="text-info text-center my-4 "><b>MY SERVICES</b></h3>
-        <div className="row sect3 text-center text-black mx-3">
-
-            
-            <div className="col-sm sect3a p-4">
-                <h3><b>Front-end Developer</b></h3>
-                <p>I design and develop interactive, responsive, and visually engaging websites using modern technologies like HTML, CSS, and JavaScript.  </p>
-            </div>
-          
-
-
-           
-           <div className="col-sm sect3c p-4">
-              <h3><b>Back-end Developer</b></h3>
-              <p>I develop and maintain the server-side infrastructure that powers websites and applications, ensuring seamless performance and integration with the front end.</p>
-          </div>
-         
-
-
-            
-            <div className="col-sm sect3b p-4">
-                <h3><b>UI/UX Designer</b></h3>
-                <p>
-                  I create intuitive and user-friendly digital experiences by combining design principles with user psychology. My focus is on usability, accessibility, and delivering clean, engaging interfaces.
-                </p>
-            </div>
-          
-           
-        </div>
-
-        {/* <!-- sect3 ends here --> */}
-    </section>
-      {/* <!-- services ends here --> */}
-
-
-
-
-      <section className="skills px-2 px-lg-5 " data-aos="fade-up">
-    <h3 className="text-info text-center my-4 "><b>MY SKILLS</b></h3>
-    <div className="row g-4">
-            {/* Core Development */}
-            <div className="col-lg-6">
-              <div className="card shadow-sm border-0 h-100">
-                <div className="card-body p-4">
-                  <h4 className="text-primary fw-bold mb-4">
-                    Core Development
-                  </h4>
-
-                  <div className="mb-3">
-                    <span className="d-flex align-items-center fw-semibold">
-                      <img src="/icons/html1.png" alt="HTML" width="28" className="me-2" />
-                      HTML
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
-                    </div>
-                  </div>
-
-                  <div className="mb-3">
-                    <span className="d-flex align-items-center fw-semibold">
-                      <img src="/icons/css1.png" alt="CSS" width="28" className="me-2" />
-                      CSS
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated  bg-info" style={{ width: "100%" }}></div>
-                    </div>
-                  </div>
-
-                  <div className="mb-3">
-                    <span className="d-flex align-items-center fw-semibold">
-                      <img src="/icons/js1.png" alt="JavaScript" width="28" className="me-2" />
-                      JavaScript & TypeScript
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
-                    </div>
-                  </div>
-
-                  <div className="mb-3">
-                    <span className="d-flex align-items-center fw-semibold">
-                      <img src="/icons/jquery1.png" alt="JQuery" width="28" className="me-2" />
-                      JQuery
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
-                    </div>
-                  </div>
-
-                  <div className="mb-3">
-                    <span className="d-flex align-items-center fw-semibold">
-                      <img src="/icons/react1.png" alt="React" width="28" className="me-2" />
-                      React & Vite
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
-                    </div>
-                  </div>
-
-                  <div className="mb-3">
-                    <span className="d-flex align-items-center fw-semibold">
-                      <img src="/icons/bootstrap1.png" alt="Bootstrap" width="28" className="me-2" />
-                      Bootstrap
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
-                    </div>
-                  </div>
-
-                  {/* PHP & Ajax */}
-                  <div className="mb-3">
-                    <span className="d-flex align-items-center fw-semibold">
-                      <img src="/icons/php1.png" alt="PHP" width="28" className="me-2" />
-                      PHP & Ajax
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar  progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
-                    </div>
-                  </div>
-
-                  <div className="mb-3">
-                    <span className="d-flex align-items-center fw-semibold">
-                      <img src="/icons/node.png" alt="Node.js" width="28" className="me-2" />
-                      Node.js & Express.js
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
-                    </div>
-                  </div>
-
-                  <div className="mb-3">
-                    <span className="d-flex align-items-center fw-semibold">
-                      <img src="/icons/sql.png" alt="MySQL" width="28" className="me-2" />
-                      MySQL · PostgreSQL
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
-                    </div>
-                  </div>
-
-                   {/* MongoDB & Mongoose */}
-                  <div className="mb-3">
-                    <span className="d-flex align-items-center fw-semibold">
-                      <img src="/icons/mongodb.png" alt="MongoDB" width="28" className="me-2" />
-                      MongoDB & Mongoose
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
-                    </div>
-                  </div>
-
-                  {/* Socket.io */}
-                  <div className="mb-3">
-                    <span className="d-flex align-items-center fw-semibold">
-                      <img src="/icons/socketio.png" alt="Socket.io" width="28" className="me-2" />
-                      Real-time Communication (Socket.io)
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
-                    </div>
-                  </div>
-
-                  {/* Deployment */}
-                  <div className="mb-3">
-                    <span className="d-flex align-items-center fw-semibold">
-                      <img src="/icons/deploy.png" alt="Deployment" width="28" className="me-2" />
-                      Deployment (Vercel · Render)
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "95%" }}></div>
-                    </div>
-                  </div>
-
-                  <div className="mb-3">
-                    <span className="d-flex align-items-center fw-semibold">
-                      <img src="/icons/git.png" alt="Git" width="28" className="me-2" />
-                      Git & GitHub
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "100%" }}></div>
-                    </div>
-                  </div>
-
-                   <div className="mb-3">
-                    <span className="d-flex align-items-center fw-semibold">
-                      <img src="/icons/stripe.png" alt="Stripe" width="28" className="me-2" />
-                      Stripe API · SaaS Dashboard
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" style={{ width: "95%" }}></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      {/* Embedded Global Modal Target Element */}
+      <div className="modal fade" id="myModal" tabIndex="-1" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered">
+          <div 
+            className="modal-content border-0 bg-white" 
+            style={{ 
+              borderRadius: "20px", 
+              boxShadow: "0 20px 40px rgba(0,0,0,0.12)" 
+            }}
+          >
+            {/* Modal Header */}
+            <div className="modal-header border-0 pt-4 px-4 pb-2">
+              <h4 className="modal-title text-dark fw-bold">Contact Info</h4>
+              <button 
+                type="button" 
+                className="btn-close shadow-none" 
+                data-bs-dismiss="modal" 
+                aria-label="Close"
+              ></button>
             </div>
 
-            {/* UI/UX Design */}
-            <div className="col-lg-6">
-              <div className="card shadow-sm border-0 h-100">
-                <div className="card-body p-4">
-                  <h4 className="text-primary fw-bold mb-4">
-                    UI/UX Design
-                  </h4>
-
-                  <div className="mb-3">
-                    <span className="d-flex align-items-center fw-semibold">
-                      {/* <img src="/icons/design/ux.svg" alt="UX" width="28" className="me-2" /> */}
-                      Wireframing · User Flows · Prototyping
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-success" style={{ width: "100%" }}></div>
-                    </div>
-                  </div>
-
-                  <div className="mb-3">
-                    <span className="d-flex align-items-center fw-semibold">
-                      {/* <img src="/icons/design/ui.svg" alt="UI" width="28" className="me-2" /> */}
-                      Design Systems · Accessibility (WCAG)
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-success" style={{ width: "100%" }}></div>
-                    </div>
-                  </div>
-
-                  <div className="mb-3">
-                    <span className="d-flex align-items-center fw-semibold">
-                      {/* <img src="/icons/design/figma.svg" alt="Figma" width="28" className="me-2" /> */}
-                      Figma (Prototyping, Interactive Components)
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-success" style={{ width: "100%" }}></div>
-                    </div>
-                  </div>
-
+            {/* Modal Body */}
+            <div className="modal-body px-4 py-3">
+              <p className="text-secondary small mb-4">
+                Feel free to reach out for collaborations, freelance projects, or full-time opportunities.
+              </p>
+              
+              <div className="d-flex flex-column gap-3">
+                {/* Phone Link Box */}
+                <a 
+                  href="tel:+2348072178062" 
+                  className="d-flex align-items-center text-dark text-decoration-none p-3 rounded border bg-light"
+                  style={{ transition: "all 0.15s ease-in-out" }}
+                >
+                  <img src={phone1} alt="" width="24px" className="me-3 object-contain" />
                   <div>
-                    <span className="d-flex align-items-center fw-semibold">
-                      {/* <img src="/icons/design/photoshop.svg" alt="Photoshop" width="28" className="me-2" /> */}
-                      Photoshop (UI Asset Optimization, Web Mockups)
-                    </span>
-                    <div className="progress mt-2">
-                      <div className="progress-bar progress-bar-striped progress-bar-animated bg-success" style={{ width: "100%" }}></div>
-                    </div>
+                    <small className="text-muted d-block" style={{ fontSize: "0.75rem", fontWeight: "500" }}>
+                      Voice / Call Channel
+                    </small>
+                    <span className="fw-semibold">08072178062</span>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                </a>
 
-           {/* Soft Skills Section */}
-          <div className="row g-4 mt-5">
-            <div className="col-md-3">
-              <div className="card shadow-sm border-0 text-center p-3 h-100">
-                <img src="/icons/softskills/communication.svg" alt="Communication" width="32" className="mb-2" />
-                <h6 className="fw-bold">Communication</h6>
-                <div className="progress mt-2">
-                  <div className="progress-bar progress-bar-striped progress-bar-animated bg-secondary" style={{ width: "95%" }}></div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-3">
-              <div className="card shadow-sm border-0 text-center p-3 h-100">
-                <img src="/icons/softskills/creativity.svg" alt="Creativity" width="32" className="mb-2" />
-                <h6 className="fw-bold">Creativity</h6>
-                <div className="progress mt-2">
-                  <div className="progress-bar progress-bar-striped progress-bar-animated bg-secondary" style={{ width: "95%" }}></div>
-                </div>
+                {/* Email Link Box */}
+                <a 
+                  href="mailto:ololadeazeez.m@gmail.com" 
+                  className="d-flex align-items-center text-dark text-decoration-none p-3 rounded border bg-light"
+                  style={{ transition: "all 0.15s ease-in-out" }}
+                >
+                  <img src={email1} alt="" width="24px" className="me-3 object-contain" />
+                  <div>
+                    <small className="text-muted d-block" style={{ fontSize: "0.75rem", fontWeight: "500" }}>
+                      Secure Electronic Mail
+                    </small>
+                    <span className="fw-semibold text-break">ololadeazeez.m@gmail.com</span>
+                  </div>
+                </a>
               </div>
             </div>
 
-            <div className="col-md-3">
-              <div className="card shadow-sm border-0 text-center p-3 h-100">
-                <img src="/icons/softskills/teamwork.svg" alt="Teamwork" width="32" className="mb-2" />
-                <h6 className="fw-bold">Teamwork</h6>
-                <div className="progress mt-2">
-                  <div className="progress-bar progress-bar-striped progress-bar-animated bg-secondary" style={{ width: "90%" }}></div>
-                </div>
-              </div>
+            {/* Modal Footer */}
+            <div className="modal-footer border-0 pb-4 px-4 pt-2">
+              <button 
+                type="button" 
+                className="btn btn-light text-secondary border px-4 py-2 rounded-pill fw-semibold btn-sm" 
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
             </div>
 
-            <div className="col-md-3">
-              <div className="card shadow-sm border-0 text-center p-3 h-100">
-                <img src="/icons/softskills/problem_solving.svg" alt="Problem Solving" width="32" className="mb-2" />
-                <h6 className="fw-bold">Problem Solving</h6>
-                <div className="progress mt-2">
-                  <div className="progress-bar progress-bar-striped progress-bar-animated bg-secondary" style={{ width: "90%" }}></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* <!-- sect4 ends here --> */}
-           <span id="project1"></span>
-
-      </section>
-      {/* skills ends here */}
-
-
-
-
-      <section className="mt-5 pt-5">
-       <Projects />
-       
-    <span id="contact1"></span>
-      </section>
-      {/* <!-- projects ends here --> */}
-
-
-
-      <section className="Contacts text-center">
-      <h3 className="text-info text-center my-4 "><b>MY CONTACT</b></h3><br />
-      <div className="row text-black" id="">
-        <p className="text-black h4">Feel free to reach out for collaborations, freelance projects, or full-time opportunities.</p>
-        <h4 className="col-sm my-3">
-          <a href="tel:+2348072178062" className="text-black text-decoration-none">
-            <img src={phone1} alt="" width="25px" /> 08072178062</a>
-        </h4>
-
-        <h4 className="col-sm mt-4"> 
-          <a href="mailto:ololadeazeez.m@gmail.com" className="text-black text-decoration-none">
-            <img src={email1} alt="" width="25px"  /> 
-            <i>ololadeazeez.m@gmail.com</i></a></h4>
-      </div>
-
-      <div className="mt-5 sect1b">
-                <a href="https://web.facebook.com/" className="text-decoration-none"><img src={facebook} alt="" width={"55px"} className="p-2 " /> </a>
-                
-                                <a href="https://www.instagram.com/azeez.m59/" className="text-decoration-none mx-4"><img src={insta1} alt="" width={"55px"} className="p-2 " /> </a>
-                
-                                <a href="https://www.linkedin.com/in/azeez-ololade-musa-b0b20925b" className="text-decoration-none"><img src={linkendin} alt="" width={"55px"} className="p-1 " /> </a>
-                
-                                <a href="https://wa.me/08072178062" className="text-decoration-none ms-4"><img src={whatsapp} alt="" width={"55px"} className="p-2 " /> </a>
-                              </div>
-                              {/* links ends here */}
-      </section>
-
-      <div>
-                <br /><br />
-                <App />
-        </div>
-
-    
-     <Footer />
-    
-
-
-
-    {/* The Modal  */}
-        <div className="modal" id="myModal">
-          <div className="modal-dialog">
-            <div className="modal-content">
-
-              {/* <!-- Modal Header --> */}
-              <div className="modal-header">
-                <h3 className="modal-title text-info">Contact Info</h3>
-                <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
-              </div>
-
-              {/* <!-- Modal body --> */}
-              <div className="modal-body">
-               
-              <div className=" text-black" id="">
-                <p className="text-black h4">Feel free to reach out for collaborations, freelance projects, or full-time opportunities.</p>
-        <h4 className="my-3">
-          <a href="tel:+2348072178062" className="text-black text-decoration-none">
-            <img src={phone1} alt="" width="25px" /> 08072178062</a>
-        </h4>
-
-        <h4 className="mt-4"> 
-          <a href="mailto:ololadeazeez.m@gmail.com" className="text-black text-decoration-none">
-            <img src={email1} alt="" width="25px"  /> 
-            <i>ololadeazeez.m@gmail.com</i></a></h4>
-      </div>
-              </div>
-
-              {/* <!-- Modal footer --> */}
-              <div className="modal-footer">
-                <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Close</button>
-              </div>
-
-            </div>
           </div>
         </div>
+      </div>
 
-        
-
-
-        <Outlet />
+      <Outlet />
     </>
-  )
-}
+  );
+};

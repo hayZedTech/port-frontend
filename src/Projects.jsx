@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Modal } from "react-bootstrap"; 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/mystyle.css";
@@ -15,103 +15,128 @@ import vibestream from "./Images/vibestream.png";
 import expenses from "./Images/expenses.png"; 
 import award from "./Images/award.png"; 
 import habit_tracker from "./Images/habit_tracker.png"; 
-// 1. Add your new image import here
 import personal_inventory from "./Images/personal_inventory.png"; 
+import hayzed_blog_api from "./Images/blog_django_api.png"; 
 
 export const Projects = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  // 2. Updated default to ID 11
-  const [activeProject, setActiveProject] = useState(11); 
+  const [activeTab, setActiveTab] = useState("mobile");
+
+  const categories = [
+    { id: "mobile", label: "Mobile Apps 📱" },
+    { id: "backend", label: "Backend Engines ⚙️" },
+    { id: "web", label: "Frontend & Fullstack Web 🌐" }
+  ];
 
   const projects = [
     {
       id: 11,
-      title: "Personal Inventory (Mobile)",
+      category: "mobile",
+      title: "Personal Inventory",
       desc: "A smart cloud-based pantry management system. It features a high-speed barcode scanner that integrates with the Open Food Facts API and a custom Appwrite backend. It includes intelligent 'already-in-stock' detection, automated expiry date tracking with urgent alerts, and real-time inventory synchronization across devices.",
       img: personal_inventory,
-      link: "https://github.com/hayzedTech/Personal-Inventory", // Update with your actual repo
+      link: "https://github.com/hayzedTech/Personal-Inventory",
       languages: ["React Native", "Expo", "TypeScript", "Appwrite", "Barcode Scanner", "Context API"]
     },
     {
       id: 10,
-      title: "Momentum Habit Tracker (Mobile)",
+      category: "mobile",
+      title: "Momentum Habit Tracker",
       desc: "A high-performance mobile application designed for consistency. It features secure authentication, real-time data synchronization via Appwrite WebSockets, and dynamic progress analytics using interactive charts. Built with a focus on fluid UX and native performance.",
       img: habit_tracker,
       link: "https://github.com/hayzedTech/Habit_Tracker_App",
       languages: ["React Native", "Expo", "TypeScript", "Appwrite", "React Native Paper", "Chart Kit"]
     },
     {
+      id: 12,
+      category: "backend",
+      title: "Hayzed Blog API Engine",
+      desc: "A production-grade, highly secure backend infrastructure built using Django REST Framework. Features robust stateless JWT session management, custom object-level authorizations (IsAuthorOrReadOnly), optimized relational database processing eliminating N+1 queries, automated OpenAPI 3.0 specs with detailed interactive Swagger documentation routing, and Gunicorn web workers behind WhiteNoise compression utilities.",
+      img: hayzed_blog_api,
+      link: "https://github.com/hayZedTech/django-blog", 
+      languages: ["Python", "Django", "DRF", "PostgreSQL", "JWT Auth", "drf-spectacular", "Gunicorn", "WhiteNoise"]
+    },
+    {
       id: 1,
-      title: "Chat App",
+      category: "web",
+      title: "Real-Time Chat Application",
       desc: "A lightweight and fully featured real-time chat application built with React for the frontend, Node.js + Express for the backend, and PostgreSQL for data storage. It includes features such as real-time messaging with Socket.IO (both public and private), optimistic UI updates for instant feedback, message delivery and read receipts, inline reply and message editing/deleting, emoji reactions, file and image uploads with previews and progress tracking, and voice note recording and playback.",
       img: chat_img,
       link: "https://chat-realtime-front.vercel.app/",
-      languages: ["HTML", "CSS", "React", "Node.js", "Express.js", "PostgreSQL", "Bootstrap", "Socket.IO", "Axios"]
+      languages: ["React", "Node.js", "Express.js", "PostgreSQL", "Socket.IO", "Bootstrap", "Axios"]
     },
     {
       id: 2,
+      category: "web",
       title: "Expense Management Dashboard",
       desc: "A responsive expense tracking dashboard built with React, TypeScript, and Supabase. Features include CRUD operations for budgets and expenses, category-based charts using Recharts, and smooth UI interactions with Framer Motion and SweetAlert2.",
       img: expenses,
       link: "https://expenses-tracker-swart-eight.vercel.app/",
-      languages: ["React", "TypeScript", "Supabase", "Recharts", "Framer Motion", "SweetAlert2", "Tailwind", "Vite", "Zustand"]
+      languages: ["React", "TypeScript", "Supabase", "Recharts", "Framer Motion", "SweetAlert2", "Tailwind CSS", "Zustand"]
     },
     {
       id: 3,
-      title: "Exam App 1",
+      category: "web",
+      title: "Exam Practice Platform (App 1)",
       desc: "An interactive exam practice platform where students can take subject-based quizzes. Built with React for a smooth user experience, Bootstrap for design, and JavaScript for quiz logic.",
       img: exam002,
       link: "/Biology01",
-      languages: ["HTML", "CSS", "React", "JavaScript", "Bootstrap"],
+      languages: ["React", "JavaScript", "Bootstrap", "HTML", "CSS"]
     },
     {
       id: 4,
-      title: "Exam App 2",
+      category: "web",
+      title: "Computer Based Testing (App 2)",
       desc: "A computer-based testing (CBT) platform designed for conducting online exams. Built with PHP and PostgreSQL for backend management, JavaScript and jQuery for interactive features, and Bootstrap for layout.",
       img: cbt_image,
       link: "https://hayzed-exam.onrender.com",
-      languages: ["HTML", "CSS", "JavaScript", "JQuery", "PHP", "Bootstrap", "PostgreSQL"],
+      languages: ["PHP", "PostgreSQL", "JavaScript", "JQuery", "Bootstrap", "CSS"]
     },
     {
       id: 5,
-      title: "Ecommerce Website",
+      category: "web",
+      title: "E-Commerce Digital Storefront",
       desc: "A fully functional ecommerce website where users can browse products, add to cart, and purchase online. Built with PHP and MySQL for backend, Bootstrap and jQuery for frontend interactivity.",
       img: ecommerce,
       link: "https://jimmarof.com",
-      languages: ["HTML", "CSS", "PHP", "JavaScript", "Bootstrap", "JQuery", "MYSQL"],
+      languages: ["PHP", "MySQL", "JavaScript", "JQuery", "Bootstrap"]
     },
     {
       id: 6,
-      title: "Blog Website",
+      category: "web",
+      title: "Dynamic Content Blog Platform",
       desc: "A dynamic blog platform allowing users to read and interact with published articles. Developed using PHP and MySQL for backend content management, Bootstrap for design, and jQuery + JavaScript for interactivity.",
       img: blog,
       link: "https://jimmarof.com/jimmarof_blog/index.php",
-      languages: ["HTML", "CSS", "PHP", "JavaScript", "Bootstrap", "JQuery", "MYSQL"],
+      languages: ["PHP", "MySQL", "JavaScript", "JQuery", "Bootstrap"]
     },
     {
       id: 7,
-      title: "Multi-Tenant SaaS Billing Dashboard",
+      category: "web",
+      title: "Multi-Tenant SaaS Billing System",
       desc: "Developed a full-featured multi-tenant SaaS dashboard with subscription management and Stripe integration. Implements role-based access control, real-time project management, and secure API endpoints.",
       img: stripe_dashboard,
       link: "https://saas-billing-frontend.vercel.app",
-      languages: ["HTML", "CSS", "React", "Node.js", "Express.js", "PostgreSQL", "Bootstrap", "Stripe API"],
+      languages: ["React", "Node.js", "Express.js", "PostgreSQL", "Stripe API", "Bootstrap"]
     },
     {
       id: 8,
+      category: "web",
       title: "Realtime Vibestream App",
       desc: "A real-time social media platform with private and group chat, instant notifications, and conversation management. Integrated Socket.io for real-time messaging and MongoDB for scalable data storage.",
       img: vibestream,
       link: "https://vibestream-frontend-beige.vercel.app/",
-      languages: ["HTML", "CSS", "React", "Node.js", "Express.js", "MongoDB", "Bootstrap", "Socket.io"],
+      languages: ["React", "Node.js", "Express.js", "MongoDB", "Socket.io", "Bootstrap"]
     },
     {
       id: 9,
+      category: "web",
       title: "Elite Award Nomination System",
       desc: "A sophisticated real-time voting platform featuring a secure administrative dashboard, live result tallying with automated tie-detection, and a high-fidelity 'glowing' light UI designed for prestigious ceremonies.",
       img: award,
       link: "https://awards-theta-eight.vercel.app/",
-      languages: ["React", "Supabase", "Tailwind CSS", "Lucide React", "SweetAlert2"],
+      languages: ["React", "Supabase", "Tailwind CSS", "Lucide React", "SweetAlert2"]
     }
   ];
 
@@ -120,108 +145,159 @@ export const Projects = () => {
     setShowModal(true);
   };
 
-  const handleProjectClick = (project) => {
-    setActiveProject(project.id);
-    if (window.innerWidth < 768) {
-      openModal(project);
-    }
-  };
-
-  const currentProject = projects.find((p) => p.id === activeProject);
+  const filteredProjects = projects.filter((p) => p.category === activeTab);
 
   return (
     <>
-      <section className="bg-light py-4">
-        <h3 className="text-info text-center mb-3 fw-bold">MY PROJECTS</h3>
-
+      <section className=" py-5 min-vh-100" style={{backgroundColor:"#fff"}}>
         <div className="container">
-          <div className="row">
-            <div className="col-md-4 mb-4">
-              <div className="card shadow-lg border-0 h-100 p-3">
-                <ul className="list-group">
-                  {projects.map((project) => (
-                    <li
-                      key={project.id}
-                      className={`list-group-item list-group-item-action py-2 h6 ${
-                        activeProject === project.id ? "active" : ""
-                      }`}
-                      style={{ cursor: "pointer" }}
-                      onClick={() => handleProjectClick(project)}
-                    >
-                      {project.title}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="col-md-8">
-              {currentProject && (
-                <motion.div
-                  key={currentProject.id}
-                  className="card shadow-lg border-0"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4 }}
-                  style={{ cursor: "pointer" }}
-                  onClick={() => openModal(currentProject)}
-                >
-                  <motion.img
-                    src={currentProject.img}
-                    alt={currentProject.title}
-                    className="card-img-top"
-                    style={{ height: "250px", width: "100%", objectFit: "cover" }}
-                    whileHover={{ scale: 1.02 }}
-                  />
-                  <div className="card-body text-center bg-primary rounded-bottom">
-                    <h5 className="card-title fw-bold text-white">
-                      {currentProject.title}
-                    </h5>
-                    <p className="card-text text-white">
-                      {currentProject.desc.length > 120
-                        ? currentProject.desc.slice(0, 120) + "..."
-                        : currentProject.desc}
-                    </p>
-                    <span className="badge bg-light text-primary">Click to Expand Details</span>
-                  </div>
-                </motion.div>
-              )}
-            </div>
+          {/* Section Header */}
+          <div className="text-center mb-5">
+            <h2 className="text-dark fw-bold position-relative d-inline-block pb-2">
+              EXPERT PORTFOLIO ARCHITECTURE
+              <span 
+                className="position-absolute bottom-0 start-50 translate-middle-x bg-info rounded" 
+                style={{ height: "4px", width: "60px" }}
+              ></span>
+            </h2>
+            <p className="text-muted mt-2">Explore targeted engineering builds sorted by platform domains</p>
           </div>
+
+          {/* Navigation Category Tabs */}
+          <div className="d-flex flex-wrap justify-content-center gap-2 mb-5">
+            {categories.map((tab) => (
+              <button
+                key={tab.id}
+                className={`btn px-4 py-2 rounded-pill fw-bold transition-all shadow-sm ${
+                  activeTab === tab.id 
+                    ? "btn-info text-dark shadow animate-pulse" 
+                    : "btn-outline-secondary bg-white text-secondary"
+                }`}
+                onClick={() => setActiveTab(tab.id)}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Animated Responsive Grid Array */}
+          <motion.div layout className="row g-4 justify-content-center">
+            <AnimatePresence mode="popLayout">
+              {filteredProjects.map((project) => (
+                <div key={project.id} className="col-12 col-md-6 col-lg-4 d-flex">
+                  <motion.div
+                    layout
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.3 }}
+                    className="card border-0 w-100 h-100 flex-column overflow-hidden bg-white custom-project-card"
+                    style={{ 
+                      borderRadius: "16px", 
+                      cursor: "pointer",
+                      boxShadow: "0 10px 20px 5px rgba(0,0,0,0.4), 0 4px 16px -8px rgba(0,0,0,0.4)"
+                    }}
+                    onClick={() => openModal(project)}
+                    whileHover={{ 
+                      y: -8, 
+                      boxShadow: "0 20px 35px -10px rgba(0,0,0,0.18), 0 6px 20px -6px rgba(0,0,0,0.1)",
+                      transition: { duration: 0.2 } 
+                    }}
+                  >
+                    {/* Project Image Frame Layout */}
+                    <div className="position-relative overflow-hidden" style={{ height: "200px" }}>
+                      <img
+                        src={project.img}
+                        alt={project.title}
+                        className="w-100 h-100 object-cover"
+                        style={{ objectFit: "cover" }}
+                      />
+                      <div className="position-absolute top-0 end-0 m-3">
+                        <span className="badge bg-dark bg-opacity-75 backdrop-blur px-3 py-2 rounded-pill small">
+                          ID: #{project.id}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Card Description Data Segment */}
+                    <div className="card-body p-4 d-flex flex-column flex-grow-1">
+                      <h5 className="card-title text-dark fw-bold mb-2 text-truncate-2">
+                        {project.title}
+                      </h5>
+                      <p className="card-text text-secondary small flex-grow-1 mb-4 line-clamp-3">
+                        {project.desc.length > 140
+                          ? project.desc.slice(0, 140) + "..."
+                          : project.desc}
+                      </p>
+
+                      {/* Chip Micro-Tags Mapping Component */}
+                      <div className="d-flex flex-wrap gap-1 mb-3 overflow-hidden" style={{ maxHeight: "64px" }}>
+                        {project.languages.slice(0, 4).map((lang, idx) => (
+                          <span key={idx} className="badge bg-light text-secondary border px-2 py-1 small">
+                            {lang}
+                          </span>
+                        ))}
+                        {project.languages.length > 4 && (
+                          <span className="badge bg-light text-info border px-2 py-1 small fw-bold">
+                            +{project.languages.length - 4}
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="mt-auto pt-3 border-top d-flex align-items-center justify-content-between text-info fw-bold card-footer-action">
+                        <span>Inspect System Specs</span>
+                        <i className="bi bi-arrow-right-short fs-4"></i>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
         </div>
       </section>
 
-      <Modal show={showModal} onHide={() => setShowModal(false)} centered size="lg">
+      {/* Details Expansion Modal Workspace */}
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered size="lg" className="portfolio-custom-modal">
         {selectedProject && (
           <>
-            <Modal.Header closeButton>
-              <Modal.Title className="fw-bold text-primary">{selectedProject.title}</Modal.Title>
+            <Modal.Header closeButton className="border-0 pb-0">
+              <Modal.Title className="fw-bold text-dark px-2 pt-2">
+                {selectedProject.title}
+              </Modal.Title>
             </Modal.Header>
-            <Modal.Body>
-              <img
-                src={selectedProject.img}
-                alt={selectedProject.title}
-                className="img-fluid rounded shadow mb-3 w-100"
-              />
-              <p className="lead">{selectedProject.desc}</p>
-              <hr />
-              <h6 className="fw-bold">Technologies Used:</h6>
-              <div className="d-flex flex-wrap gap-2 mb-3">
+            <Modal.Body className="p-4">
+              <div className="rounded-4 overflow-hidden mb-4 position-relative" style={{ maxHeight: "400px", boxShadow: "0 8px 24px -6px rgba(0,0,0,0.15)" }}>
+                <img
+                  src={selectedProject.img}
+                  alt={selectedProject.title}
+                  className="img-fluid w-100 object-cover"
+                  style={{ objectFit: "cover", maxHeight: "400px", width: "100%" }}
+                />
+              </div>
+              
+              <h6 className="text-muted text-uppercase tracking-wider fw-bold mb-2">Project Overview</h6>
+              <p className="text-dark lh-base fs-6 mb-4">{selectedProject.desc}</p>
+              
+              <hr className="my-4 text-muted" />
+              
+              <h6 className="text-muted text-uppercase tracking-wider fw-bold mb-3">Core Stack Architecture</h6>
+              <div className="d-flex flex-wrap gap-2">
                 {selectedProject.languages.map((lang, i) => (
-                  <span key={i} className="badge bg-info text-dark">
+                  <span key={i} className="badge bg-info text-dark px-3 py-2 fs-7 fw-semibold rounded-pill shadow-sm">
                     {lang}
                   </span>
                 ))}
               </div>
             </Modal.Body>
-            <Modal.Footer>
+            <Modal.Footer className="border-0 p-4 pt-0">
               <a
                 href={selectedProject.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary w-100"
+                className="btn btn-dark w-100 py-2.5 fw-bold rounded-3 shadow-sm transition-all text-white"
               >
-                {[10, 11].includes(selectedProject.id) ? "View on GitHub / Download APK" : "Launch Project Website"}
+                {[10, 11, 12].includes(selectedProject.id) ? "📂 Audit Source Code Repository" : "🚀 Launch Live Digital Space"}
               </a>
             </Modal.Footer>
           </>
