@@ -43,7 +43,7 @@ export const About = () => {
           className="card border-0 bg-white p-4 p-md-5 mb-5"
           style={{ 
             borderRadius: "20px",
-            boxShadow: "0 10px 30px -12px rgba(0,0,0,0.08), 0 4px 16px -8px rgba(0,0,0,0.04)"
+            boxShadow: "0 10px 20px 5px rgba(0,0,0,0.4), 0 4px 16px -8px rgba(0,0,0,0.4)"
           }}
         >
           <div className="row align-items-center">

@@ -20,7 +20,7 @@ const App = () => {
 
       setStatus({ 
         type: "success", 
-        text: "Message sent successfully to production server!" 
+        text: "Message sent successfully!" 
       });
       setName("");
       setMessage("");
@@ -33,7 +33,7 @@ const App = () => {
 
         setStatus({ 
           type: "success", 
-          text: "Message sent successfully (Local Host Fallback)!" 
+          text: "Message sent successfully!" 
         });
         setName("");
         setMessage("");

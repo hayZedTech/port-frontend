@@ -41,7 +41,7 @@ export const Contacts = () => {
               className="card border-0 bg-white p-4 p-xl-5 w-100 h-100 d-flex flex-column justify-content-between"
               style={{ 
                 borderRadius: "20px",
-                boxShadow: "0 10px 20px 5px rgba(0,0,0,0.02), 0 4px 16px -8px rgba(0,0,0,0.01)"
+                boxShadow: "0 10px 20px 5px rgba(0,0,0,0.4), 0 4px 16px -8px rgba(0,0,0,0.4)"
               }}
             >
               <div>
@@ -118,7 +118,7 @@ export const Contacts = () => {
               className="card border-0 bg-white p-4 p-md-5 h-100"
               style={{ 
                 borderRadius: "20px",
-                boxShadow: "0 10px 20px 5px rgba(0,0,0,0.03), 0 4px 16px -8px rgba(0,0,0,0.02)"
+                boxShadow: "0 10px 20px 5px rgba(0,0,0,0.4), 0 4px 16px -8px rgba(0,0,0,0.4)"
               }}
             >
               <h4 className="text-dark fw-bold mb-4" style={{ fontSize: "1.4rem" }}>Send A Direct Message</h4>

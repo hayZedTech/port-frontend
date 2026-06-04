@@ -76,7 +76,7 @@ export const Skills = () => {
                 className="card border-0 bg-white p-4 w-100 d-flex flex-column"
                 style={{ 
                   borderRadius: "20px",
-                  boxShadow: "0 10px 20px 5px rgba(0,0,0,0.03), 0 4px 16px -8px rgba(0,0,0,0.02)"
+                  boxShadow: "0 10px 20px 5px rgba(0,0,0,0.4), 0 4px 16px -8px rgba(0,0,0,0.4)"
                 }}
               >
                 <div className="d-flex align-items-center mb-3">
@@ -129,7 +129,7 @@ export const Skills = () => {
                   className="card border-0 bg-white text-center p-3 h-100 d-flex flex-column align-items-center justify-content-center"
                   style={{ 
                     borderRadius: "14px",
-                    boxShadow: "0 4px 12px rgba(0,0,0,0.02)"
+                    boxShadow: "0 10px 20px 5px rgba(0,0,0,0.4), 0 4px 16px -8px rgba(0,0,0,0.4)"
                   }}
                 >
                   <img src={sk.icon} alt={sk.title} width="26" className="mb-2 opacity-75" />

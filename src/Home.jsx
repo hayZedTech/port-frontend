@@ -147,7 +147,7 @@ export const Home = () => {
                 <motion.div variants={itemVariants} className="mb-5">
                   <motion.button 
                     type="button" 
-                    className="btn btn-info text-white px-4 py-2.5 rounded-pill shadow-sm fw-bold border-0" 
+                    className="btn btn-info text-white px-4 py-2.5 rounded-5 shadow-sm fw-bold border-0" 
                     data-bs-toggle="modal" 
                     data-bs-target="#myModal"
                     whileHover={{ 
