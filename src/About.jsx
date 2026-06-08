@@ -54,7 +54,7 @@ export const About = () => {
             </div>
             <div className="col-lg-8 border-start-lg">
               <p className="text-secondary fs-5 lh-base mb-0 ps-lg-4">
-                I architect software systems across the entire technology layer—from designing modern user interfaces 
+                I architect software systems across the entire technology layer, from designing modern user interfaces 
                 to optimizing relational database management systems and server-side processing chains. By balancing defensive 
                 programming with rapid execution, I build scalable web platforms, secure API documentation hubs, 
                 and high-speed mobile solutions tailored for flawless production deployment.
