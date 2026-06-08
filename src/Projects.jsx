@@ -17,6 +17,7 @@ import award from "./Images/award.png";
 import habit_tracker from "./Images/habit_tracker.png"; 
 import personal_inventory from "./Images/personal_inventory.png"; 
 import hayzed_blog_api from "./Images/blog_django_api.png"; 
+import multitenant_saas from "./Images/multitenant-saas.png"; // Newly added image asset path
 
 export const Projects = () => {
   const [showModal, setShowModal] = useState(false);
@@ -56,6 +57,15 @@ export const Projects = () => {
       img: hayzed_blog_api,
       link: "https://github.com/hayZedTech/django-blog", 
       languages: ["Python", "Django", "DRF", "PostgreSQL", "JWT Auth", "drf-spectacular", "Gunicorn", "WhiteNoise"]
+    },
+    {
+      id: 13,
+      category: "backend",
+      title: "Multi-Tenant SaaS B2B Inventory API",
+      desc: "An enterprise-grade headless commerce backend featuring strict row-level tenant isolation via thread-local middleware and a custom database query manager. Includes a high-concurrency order engine protected by PostgreSQL pessimistic locks (SELECT FOR UPDATE) to prevent race conditions, and an asynchronous processing tier using Celery and Redis to handle bulk CSV reporting and automated webhook dispatch systems.",
+      img: multitenant_saas,
+      link: "https://github.com/hayzedTech/multitenant-saas-api", // Standardized to match your portfolio structure
+      languages: ["Python", "Django", "DRF", "PostgreSQL", "Celery", "Redis", "JWT Auth", "drf-spectacular"]
     },
     {
       id: 1,
@@ -297,7 +307,7 @@ export const Projects = () => {
                 rel="noopener noreferrer"
                 className="btn btn-dark w-100 py-2.5 fw-bold rounded-3 shadow-sm transition-all text-white"
               >
-                {[10, 11, 12].includes(selectedProject.id) ? "📂 Audit Source Code Repository" : "🚀 Launch Live Digital Space"}
+                {[10, 11, 12, 13].includes(selectedProject.id) ? "📂 Audit Source Code Repository" : "🚀 Launch Live Digital Space"}
               </a>
             </Modal.Footer>
           </>
