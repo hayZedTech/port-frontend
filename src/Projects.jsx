@@ -64,7 +64,7 @@ export const Projects = () => {
       title: "Multi-Tenant SaaS B2B Inventory API",
       desc: "An enterprise-grade headless commerce backend featuring strict row-level tenant isolation via thread-local middleware and a custom database query manager. Includes a high-concurrency order engine protected by PostgreSQL pessimistic locks (SELECT FOR UPDATE) to prevent race conditions, and an asynchronous processing tier using Celery and Redis to handle bulk CSV reporting and automated webhook dispatch systems.",
       img: multitenant_saas,
-      link: "https://github.com/hayzedTech/multitenant-saas-api", // Standardized to match your portfolio structure
+      link: "https://github.com/hayZedTech/multitenant-saas",
       languages: ["Python", "Django", "DRF", "PostgreSQL", "Celery", "Redis", "JWT Auth", "drf-spectacular"]
     },
     {
