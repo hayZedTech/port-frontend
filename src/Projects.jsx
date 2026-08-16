@@ -18,6 +18,7 @@ import habit_tracker from "./Images/habit_tracker.png";
 import personal_inventory from "./Images/personal_inventory.png"; 
 import hayzed_blog_api from "./Images/blog_django_api.png"; 
 import multitenant_saas from "./Images/multitenant-saas.png"; // Newly added image asset path
+import tradetalk from "./Images/tradetalk.png";
 
 export const Projects = () => {
   const [showModal, setShowModal] = useState(false);
@@ -31,6 +32,15 @@ export const Projects = () => {
   ];
 
   const projects = [
+    {
+      id: 14,
+      category: "mobile",
+      title: "TradeTalk Real-Time Chat & Business App",
+      desc: "A feature-rich real-time communication platform built with React Native and Supabase backend. It features instant direct messaging, live online presence & typing indicators, voice note recording & audio playback, dynamic light/dark theme switching, full-text message search, push notifications with Firebase FCM/Expo, and user blocking & moderation workflows.",
+      img: tradetalk,
+      link: "https://github.com/hayZedTech/TradeTalk",
+      languages: ["React Native", "Expo", "TypeScript", "Supabase", "Firebase FCM", "AsyncStorage", "Context API"]
+    },
     {
       id: 11,
       category: "mobile",
@@ -307,7 +317,7 @@ export const Projects = () => {
                 rel="noopener noreferrer"
                 className="btn btn-dark w-100 py-2.5 fw-bold rounded-3 shadow-sm transition-all text-white"
               >
-                {[10, 11, 12, 13].includes(selectedProject.id) ? "📂 Audit Source Code Repository" : "🚀 Launch Live Digital Space"}
+                {[10, 11, 12, 13, 14].includes(selectedProject.id) ? "📂 Audit Source Code Repository" : "🚀 Launch Live Digital Space"}
               </a>
             </Modal.Footer>
           </>
