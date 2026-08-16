@@ -17,7 +17,7 @@ import award from "./Images/award.png";
 import habit_tracker from "./Images/habit_tracker.png"; 
 import personal_inventory from "./Images/personal_inventory.png"; 
 import hayzed_blog_api from "./Images/blog_django_api.png"; 
-import multitenant_saas from "./Images/multitenant-saas.png"; // Newly added image asset path
+import multitenant_saas from "./Images/multitenant-saas.png"; 
 import tradetalk from "./Images/tradetalk.png";
 
 export const Projects = () => {
@@ -38,7 +38,8 @@ export const Projects = () => {
       title: "TradeTalk Real-Time Chat & Business App",
       desc: "A feature-rich real-time communication platform built with React Native and Supabase backend. It features instant direct messaging, live online presence & typing indicators, voice note recording & audio playback, dynamic light/dark theme switching, full-text message search, push notifications with Firebase FCM/Expo, and user blocking & moderation workflows.",
       img: tradetalk,
-      link: "https://github.com/hayZedTech/TradeTalk",
+      demoLink: null,
+      githubLink: "https://github.com/hayZedTech/TradeTalk",
       languages: ["React Native", "Expo", "TypeScript", "Supabase", "Firebase FCM", "AsyncStorage", "Context API"]
     },
     {
@@ -47,7 +48,8 @@ export const Projects = () => {
       title: "Personal Inventory",
       desc: "A smart cloud-based pantry management system. It features a high-speed barcode scanner that integrates with the Open Food Facts API and a custom Appwrite backend. It includes intelligent 'already-in-stock' detection, automated expiry date tracking with urgent alerts, and real-time inventory synchronization across devices.",
       img: personal_inventory,
-      link: "https://github.com/hayzedTech/Personal-Inventory",
+      demoLink: null,
+      githubLink: "https://github.com/hayzedTech/Personal-Inventory",
       languages: ["React Native", "Expo", "TypeScript", "Appwrite", "Barcode Scanner", "Context API"]
     },
     {
@@ -56,7 +58,8 @@ export const Projects = () => {
       title: "Momentum Habit Tracker",
       desc: "A high-performance mobile application designed for consistency. It features secure authentication, real-time data synchronization via Appwrite WebSockets, and dynamic progress analytics using interactive charts. Built with a focus on fluid UX and native performance.",
       img: habit_tracker,
-      link: "https://github.com/hayzedTech/Habit_Tracker_App",
+      demoLink: null,
+      githubLink: "https://github.com/hayzedTech/Habit_Tracker_App",
       languages: ["React Native", "Expo", "TypeScript", "Appwrite", "React Native Paper", "Chart Kit"]
     },
     {
@@ -65,7 +68,9 @@ export const Projects = () => {
       title: "Hayzed Blog API Engine",
       desc: "A production-grade, highly secure backend infrastructure built using Django REST Framework. Features robust stateless JWT session management, custom object-level authorizations (IsAuthorOrReadOnly), optimized relational database processing eliminating N+1 queries, automated OpenAPI 3.0 specs with detailed interactive Swagger documentation routing, and Gunicorn web workers behind WhiteNoise compression utilities.",
       img: hayzed_blog_api,
-      link: "https://github.com/hayZedTech/django-blog", 
+      demoLink: null,
+      docsLink: "https://django-blog-cyxr.onrender.com/api/docs/swagger/",
+      githubLink: "https://github.com/hayZedTech/django-blog", 
       languages: ["Python", "Django", "DRF", "PostgreSQL", "JWT Auth", "drf-spectacular", "Gunicorn", "WhiteNoise"]
     },
     {
@@ -74,7 +79,9 @@ export const Projects = () => {
       title: "Multi-Tenant SaaS B2B Inventory API",
       desc: "An enterprise-grade headless commerce backend featuring strict row-level tenant isolation via thread-local middleware and a custom database query manager. Includes a high-concurrency order engine protected by PostgreSQL pessimistic locks (SELECT FOR UPDATE) to prevent race conditions, and an asynchronous processing tier using Celery and Redis to handle bulk CSV reporting and automated webhook dispatch systems.",
       img: multitenant_saas,
-      link: "https://github.com/hayZedTech/multitenant-saas",
+      demoLink: null,
+      docsLink: "https://multitenant-saas-byx3.onrender.com/api/v1/docs/",
+      githubLink: "https://github.com/hayZedTech/multitenant-saas",
       languages: ["Python", "Django", "DRF", "PostgreSQL", "Celery", "Redis", "JWT Auth", "drf-spectacular"]
     },
     {
@@ -83,7 +90,8 @@ export const Projects = () => {
       title: "Real-Time Chat Application",
       desc: "A lightweight and fully featured real-time chat application built with React for the frontend, Node.js + Express for the backend, and PostgreSQL for data storage. It includes features such as real-time messaging with Socket.IO (both public and private), optimistic UI updates for instant feedback, message delivery and read receipts, inline reply and message editing/deleting, emoji reactions, file and image uploads with previews and progress tracking, and voice note recording and playback.",
       img: chat_img,
-      link: "https://chat-realtime-front.vercel.app/",
+      demoLink: "https://chat-realtime-front.vercel.app/",
+      githubLink: "https://github.com/hayZedTech/chat-frontend",
       languages: ["React", "Node.js", "Express.js", "PostgreSQL", "Socket.IO", "Bootstrap", "Axios"]
     },
     {
@@ -92,7 +100,8 @@ export const Projects = () => {
       title: "Expense Management Dashboard",
       desc: "A responsive expense tracking dashboard built with React, TypeScript, and Supabase. Features include CRUD operations for budgets and expenses, category-based charts using Recharts, and smooth UI interactions with Framer Motion and SweetAlert2.",
       img: expenses,
-      link: "https://expenses-tracker-swart-eight.vercel.app/",
+      demoLink: "https://expenses-tracker-swart-eight.vercel.app/",
+      githubLink: "https://github.com/hayZedTech/expenses-tracker",
       languages: ["React", "TypeScript", "Supabase", "Recharts", "Framer Motion", "SweetAlert2", "Tailwind CSS", "Zustand"]
     },
     {
@@ -101,7 +110,8 @@ export const Projects = () => {
       title: "Exam Practice Platform (App 1)",
       desc: "An interactive exam practice platform where students can take subject-based quizzes. Built with React for a smooth user experience, Bootstrap for design, and JavaScript for quiz logic.",
       img: exam002,
-      link: "/Biology01",
+      demoLink: "/Biology01",
+      githubLink: "https://github.com/hayZedTech",
       languages: ["React", "JavaScript", "Bootstrap", "HTML", "CSS"]
     },
     {
@@ -110,7 +120,8 @@ export const Projects = () => {
       title: "Computer Based Testing (App 2)",
       desc: "A computer-based testing (CBT) platform designed for conducting online exams. Built with PHP and PostgreSQL for backend management, JavaScript and jQuery for interactive features, and Bootstrap for layout.",
       img: cbt_image,
-      link: "https://hayzed-exam.onrender.com",
+      demoLink: "https://hayzed-exam.onrender.com",
+      githubLink: "https://github.com/hayZedTech/hayzed-exam",
       languages: ["PHP", "PostgreSQL", "JavaScript", "JQuery", "Bootstrap", "CSS"]
     },
     {
@@ -119,7 +130,8 @@ export const Projects = () => {
       title: "E-Commerce Digital Storefront",
       desc: "A fully functional ecommerce website where users can browse products, add to cart, and purchase online. Built with PHP and MySQL for backend, Bootstrap and jQuery for frontend interactivity.",
       img: ecommerce,
-      link: "https://jimmarof.com",
+      demoLink: "https://jimmarof.com",
+      githubLink: "https://github.com/hayZedTech",
       languages: ["PHP", "MySQL", "JavaScript", "JQuery", "Bootstrap"]
     },
     {
@@ -128,7 +140,8 @@ export const Projects = () => {
       title: "Dynamic Content Blog Platform",
       desc: "A dynamic blog platform allowing users to read and interact with published articles. Developed using PHP and MySQL for backend content management, Bootstrap for design, and jQuery + JavaScript for interactivity.",
       img: blog,
-      link: "https://jimmarof.com/jimmarof_blog/index.php",
+      demoLink: "https://jimmarof.com/jimmarof_blog/index.php",
+      githubLink: "https://github.com/hayZedTech",
       languages: ["PHP", "MySQL", "JavaScript", "JQuery", "Bootstrap"]
     },
     {
@@ -137,7 +150,8 @@ export const Projects = () => {
       title: "Multi-Tenant SaaS Billing System",
       desc: "Developed a full-featured multi-tenant SaaS dashboard with subscription management and Stripe integration. Implements role-based access control, real-time project management, and secure API endpoints.",
       img: stripe_dashboard,
-      link: "https://saas-billing-frontend.vercel.app",
+      demoLink: "https://saas-billing-frontend.vercel.app",
+      githubLink: "https://github.com/hayZedTech/saas-billing-frontend",
       languages: ["React", "Node.js", "Express.js", "PostgreSQL", "Stripe API", "Bootstrap"]
     },
     {
@@ -146,7 +160,8 @@ export const Projects = () => {
       title: "Realtime Vibestream App",
       desc: "A real-time social media platform with private and group chat, instant notifications, and conversation management. Integrated Socket.io for real-time messaging and MongoDB for scalable data storage.",
       img: vibestream,
-      link: "https://vibestream-frontend-beige.vercel.app/",
+      demoLink: "https://vibestream-frontend-beige.vercel.app/",
+      githubLink: "https://github.com/hayZedTech/vibestream-frontend",
       languages: ["React", "Node.js", "Express.js", "MongoDB", "Socket.io", "Bootstrap"]
     },
     {
@@ -155,7 +170,8 @@ export const Projects = () => {
       title: "Elite Award Nomination System",
       desc: "A sophisticated real-time voting platform featuring a secure administrative dashboard, live result tallying with automated tie-detection, and a high-fidelity 'glowing' light UI designed for prestigious ceremonies.",
       img: award,
-      link: "https://awards-theta-eight.vercel.app/",
+      demoLink: "https://awards-theta-eight.vercel.app/",
+      githubLink: "https://github.com/hayZedTech/awards",
       languages: ["React", "Supabase", "Tailwind CSS", "Lucide React", "SweetAlert2"]
     }
   ];
@@ -310,15 +326,37 @@ export const Projects = () => {
                 ))}
               </div>
             </Modal.Body>
-            <Modal.Footer className="border-0 p-4 pt-0">
-              <a
-                href={selectedProject.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-dark w-100 py-2.5 fw-bold rounded-3 shadow-sm transition-all text-white"
-              >
-                {[10, 11, 12, 13, 14].includes(selectedProject.id) ? "📂 Audit Source Code Repository" : "🚀 Launch Live Digital Space"}
-              </a>
+            <Modal.Footer className="border-0 p-4 pt-0 d-flex flex-wrap gap-2">
+              {selectedProject.demoLink && (
+                <a
+                  href={selectedProject.demoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-info flex-grow-1 py-2.5 fw-bold rounded-3 shadow-sm transition-all text-dark"
+                >
+                  🚀 Launch Live App
+                </a>
+              )}
+              {selectedProject.docsLink && (
+                <a
+                  href={selectedProject.docsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-dark flex-grow-1 py-2.5 fw-bold rounded-3 shadow-sm transition-all text-dark"
+                >
+                  📄 Swagger API Docs
+                </a>
+              )}
+              {selectedProject.githubLink && (
+                <a
+                  href={selectedProject.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-dark flex-grow-1 py-2.5 fw-bold rounded-3 shadow-sm transition-all text-white"
+                >
+                  📂 View Source Code
+                </a>
+              )}
             </Modal.Footer>
           </>
         )}
